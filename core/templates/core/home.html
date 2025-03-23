@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amanda - Portfólio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Purple+Purse&family=Quattrocento&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos Gerais */
+        body {
+            font-family: 'Purple Purse', cursive;
+            background-color: #000000;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #2A0606;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* Retângulo que cobre metade da tela */
+        .retangulo {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background-color: rgba(242, 209, 148, 0.85);
+            border-radius: 0 0 3% 3%;
+            z-index: 1;
+        }
+
+        /* Menu de Navegação */
+        nav {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            text-align: center;
+            padding: 20px 0;
+            margin-left: 5%; /* Adiciona um espaçamento à esquerda, movendo o menu para a direita */
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+        }
+        
+        nav ul li {
+            display: inline;
+        }
+        
+        nav ul li a {
+            color: #260101;
+            text-decoration: none;
+            font-family: 'Quattrocento', serif;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-shadow: 2px 3px 15px #401C15;
+            transition: color 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            color: #ffffff;
+        }
+        
+        /* Bola Centralizada */
+        .bola {
+            width: 290px;
+            height: 290px;
+            background-color: #2A0606;
+            border-radius: 50%;
+            position: absolute;
+            top: 13%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            z-index: 3;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        
+        /* Imagem dentro da bola */
+        .imagem_fundo img {
+            width: 80%; /* Ajustado para que a imagem não ocupe 100% */
+            height: 80%; /* Mantém a imagem proporcional */
+            object-fit: contain; /* A imagem vai se ajustar sem distorção */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* Centraliza a imagem dentro da bola */
+            border-radius: 50%;
+            z-index: 99999;
+        }
+        
+
+        /* Palavra "Amanda" no topo da bola */
+        .amanda {
+            position: absolute;
+            top: 20%; /* Centralizada */
+            left: 50%;
+            transform: translate(-50%, -50%); /* Para garantir que fique exatamente no centro */
+            font-size: 21px;
+            font-weight: bold;
+            color: #F2D194;
+            text-shadow: 3px 3px 20px rgba(0, 0, 0, 0.5);
+            z-index: 4; /* Fica acima de todas as camadas */
+        }
+        
+        /* Palavra Portfólio */
+        .portfolio {
+            position: absolute;
+            top: 51%; /* Centralizada */
+            left: 50%;
+            transform: translate(-50%, -50%); /* Para garantir que fique exatamente no centro */
+            font-size: 50px;
+            font-weight: bold;
+            color: #F2D194;
+            text-shadow: 3px 3px 20px rgba(0, 0, 0, 0.5);
+            z-index: 4; /* Fica acima de todas as camadas */
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #2A0606;
+            color: #F2D194;
+            text-align: center;
+            padding: 10px;
+            font-size: 0.75em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            z-index: 1;
+        }
+
+        /* Responsividade para telas menores */
+        @media (max-width: 768px) {
+            .portfolio {
+                font-size: 48px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Retângulo que cobre metade da tela -->
+    <div class="retangulo"></div>
+
+    <!-- Menu de Navegação -->
+    <nav>
+        <ul>
+            <li><a href="{% url 'home' %}">HOME</a></li>
+            <li><a href="{% url 'sobre' %}">SOBRE MIM</a></li>
+            <li><a href="{% url 'projetos' %}">PROJETOS</a></li>
+            <li><a href="{% url 'blog' %}">BLOG</a></li>
+            <li><a href="{% url 'conteudo' %}">CONTEÚDO DIDÁTICO</a></li>
+        </ul>
+    </nav> 
+
+
+    <!-- Bola Centralizada -->
+    <div class="bola">
+        <img src="{% static 'images/IMAGEM_LOGO_HOME.png' %}" alt="Logo Amanda">
+    </div>
+
+    <!-- Palavra "Amanda" -->
+    <div class="amanda"> 
+        AMANDA
+    </div>
+
+    <img src="{% static 'images/teste.jpg' %}" alt="Imagem de teste">
+
+
+    <!-- Palavra "Portfólio" -->
+    <div class="portfolio">
+        PORTFÓLIO
+    </div>
+
+    <!-- Div que contém a imagem -->
+    <div class="imagem_fundo">
+        <img src="{% static 'images/IMAGEM_LOGO_HOME.png' %}" alt="Logo Amanda">
+    </div>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2025 Amanda. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -8,21 +8,44 @@
     <link href="https://fonts.googleapis.com/css2?family=Purple+Purse&family=Quattrocento&display=swap" rel="stylesheet">
     <style>
         /* Estilos Gerais */
-        body {
-            font-family: 'Purple Purse', cursive;
-            background-color: #000000;
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: #2A0606;
+        body, html {
             margin: 0;
             padding: 0;
+            height: 100%;
+            font-family: 'Purple Purse', cursive;
+            overflow-x: hidden;
+        }
+
+        .main-container {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
             min-height: 100vh;
             position: relative;
+        }
+
+        /* Imagem de Fundo com Desfoque - Versão melhorada */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("{% static 'images/fundo.jpeg' %}");
+            background-size: cover;
+            background-repeat: repeat;
+            background-position: center;
+            filter: blur(8px);
+            z-index: -1;
+            transform: scale(1.2);
+        }
+
+        /* Seção superior (conteúdo original) */
+        .top-section {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
         }
 
         /* Retângulo que cobre metade da tela */
@@ -32,7 +55,7 @@
             left: 0;
             width: 100%;
             height: 50%;
-            background-color: rgba(242, 209, 148, 0.85);
+            background-color: rgba(242, 209, 148, 0.68);
             border-radius: 0 0 3% 3%;
             z-index: 1;
         }
@@ -44,9 +67,11 @@
             width: 100%;
             text-align: center;
             padding: 20px 0;
-            margin-left: 5%; /* Adiciona um espaçamento à esquerda, movendo o menu para a direita */
+            margin-left: 2.9%;
+            font-weight: bold;
+            text-shadow: 25px 25x 8px rgba(0, 0, 0, 0.23);
         }
-        
+
         nav ul {
             list-style: none;
             padding: 0;
@@ -55,11 +80,11 @@
             justify-content: center;
             gap: 80px;
         }
-        
+
         nav ul li {
             display: inline;
         }
-        
+
         nav ul li a {
             color: #260101;
             text-decoration: none;
@@ -69,158 +94,149 @@
             text-shadow: 2px 3px 15px #401C15;
             transition: color 0.3s ease;
         }
-        
+
         nav ul li a:hover {
             color: #ffffff;
         }
-        
+
         /* Bola Centralizada */
         .bola {
-            width: 290px;
-            height: 290px;
+            width: 300px;
+            height: 300px;
             background-color: #2A0606;
             border-radius: 50%;
             position: absolute;
-            top: 13%;
+            top: 10%;
             left: 50%;
             transform: translateX(-50%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            text-align: center;
-            font-size: 18px;
-            font-weight: bold;
-            z-index: 3;
-            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+        
+        /* Imagem principal */
+        .imagem_fundo {
+            width: 400px;
+            height: 225px;
+            position: absolute;
+            top: 17%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
             overflow: hidden;
         }
         
-        /* Imagem dentro da bola */
         .imagem_fundo img {
-            width: 80%; /* Ajustado para que a imagem não ocupe 100% */
-            height: 80%; /* Mantém a imagem proporcional */
-            object-fit: contain; /* A imagem vai se ajustar sem distorção */
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%); /* Centraliza a imagem dentro da bola */
-            border-radius: 50%;
-            z-index: 99999;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         
-
-        /* Palavra "Amanda" no topo da bola */
+        /* Textos */
         .amanda {
             position: absolute;
-            top: 20%; /* Centralizada */
+            top: 15%;
             left: 50%;
-            transform: translate(-50%, -50%); /* Para garantir que fique exatamente no centro */
-            font-size: 21px;
+            transform: translate(-50%, -50%);
+            font-size: 25px;
             font-weight: bold;
             color: #F2D194;
             text-shadow: 3px 3px 20px rgba(0, 0, 0, 0.5);
-            z-index: 4; /* Fica acima de todas as camadas */
+            z-index: 3;
         }
-        
-        /* Palavra Portfólio */
+
         .portfolio {
             position: absolute;
-            top: 51%; /* Centralizada */
+            top: 52%;
             left: 50%;
-            transform: translate(-50%, -50%); /* Para garantir que fique exatamente no centro */
+            transform: translate(-50%, -50%);
             font-size: 50px;
             font-weight: bold;
             color: #F2D194;
             text-shadow: 3px 3px 20px rgba(0, 0, 0, 0.5);
-            z-index: 4; /* Fica acima de todas as camadas */
+            z-index: 3;
+        }
+
+        /* Seção de conteúdo adicional - Versão corrigida */
+        .content-section {
+            flex: 1;
+            padding: 50px 20px;
+            z-index: 2;
+            position: relative;
+            min-height: 80vh;
+            color: #F2D194; /* Cor do texto para contrastar */
         }
 
         /* Rodapé */
         footer {
-            background-color: #2A0606;
+            background-color: rgba(42, 6, 6, 0.50); /* Opacidade 85% (igual ao retângulo) */
             color: #F2D194;
             text-align: center;
             padding: 10px;
-            font-size: 0.75em;
-            position: fixed;
-            bottom: 0;
+            font-size: 0.9em;
             width: 100%;
-            z-index: 1;
+            border-radius: 12px 12px 0 0; /* Cantos arredondados (mais suave) */
+            z-index: 3;
         }
 
-        /* Responsividade para telas menores */
+
+        /* Responsividade */
         @media (max-width: 768px) {
             .portfolio {
-                font-size: 48px;
+                font-size: 40px;
+            }
+            .amanda {
+                font-size: 20px;
+            }
+            nav ul {
+                gap: 30px;
+                flex-wrap: wrap;
+            }
+            .imagem_fundo {
+                width: 90%;
+                height: auto;
+                aspect-ratio: 16/9;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Retângulo que cobre metade da tela -->
-    <div class="retangulo"></div>
+    <div class="main-container">
+        <!-- Seção superior com seu conteúdo original -->
+        <div class="top-section">
+            <div class="retangulo"></div>
+            
+            <nav>
+                <ul>
+                    <li><a href="{% url 'home' %}">HOME</a></li>
+                    <li><a href="{% url 'sobre' %}">SOBRE MIM</a></li>
+                    <li><a href="{% url 'projetos' %}">PROJETOS</a></li>
+                    <li><a href="{% url 'blog' %}">BLOG</a></li>
+                    <li><a href="{% url 'conteudo' %}">CONTEÚDO DIDÁTICO</a></li>
+                </ul>
+            </nav>
 
-    <!-- Menu de Navegação -->
-    <nav>
-        <ul>
-            <li><a href="{% url 'home' %}">HOME</a></li>
-            <li><a href="{% url 'sobre' %}">SOBRE MIM</a></li>
-            <li><a href="{% url 'projetos' %}">PROJETOS</a></li>
-            <li><a href="{% url 'blog' %}">BLOG</a></li>
-            <li><a href="{% url 'conteudo' %}">CONTEÚDO DIDÁTICO</a></li>
-        </ul>
-    </nav> 
+            <div class="bola"></div>
+            
+            <div class="imagem_fundo">
+                <img src="{% static 'images/IMAGEM_LOGO_HOME.png' %}" alt="Logo Amanda">
+            </div>
+            
+            <div class="amanda">AMANDA</div>
+            <div class="portfolio">PORTFÓLIO</div>
+        </div>
 
+        <!-- Seção para conteúdo adicional -->
+        <div class="content-section">
+            <!-- Espaço para seu conteúdo adicional -->
+            <!-- Exemplo: -->
+            <div style="max-width: 800px; margin: 0 auto;">
+                <!-- Adicione aqui seus projetos, textos, etc -->
+            </div>
+        </div>
 
-    <!-- Bola Centralizada -->
-    <div class="bola">
-        <img src="{% static 'images/IMAGEM_LOGO_HOME.png' %}" alt="Logo Amanda">
+        <!-- Rodapé -->
+        <footer>
+            <p>&copy; 2025 AMANDA. TODOS OS DIREITOS RESERVADOS.</p>
+        </footer>
     </div>
-
-    <!-- Palavra "Amanda" -->
-    <div class="amanda"> 
-        AMANDA
-    </div>
-
-    <img src="{% static 'images/teste.jpg' %}" alt="Imagem de teste">
-
-
-    <!-- Palavra "Portfólio" -->
-    <div class="portfolio">
-        PORTFÓLIO
-    </div>
-
-    <!-- Div que contém a imagem -->
-    <div class="imagem_fundo">
-        <img src="{% static 'images/IMAGEM_LOGO_HOME.png' %}" alt="Logo Amanda">
-    </div>
-
-    <!-- Rodapé -->
-    <footer>
-        <p>&copy; 2025 Amanda. Todos os direitos reservados.</p>
-    </footer>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

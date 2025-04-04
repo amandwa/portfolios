@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amanda - Portfólio</title>
     <link href="https://fonts.googleapis.com/css2?family=Purple+Purse&family=Quattrocento&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
     <style>
         /* Estilos Gerais */
         body, html {
@@ -14,7 +17,10 @@
             height: 100%;
             font-family: 'Purple Purse', cursive;
             overflow-x: hidden;
-            min-height: 1000vh;
+            min-height: 100vh;
+            width: 100%;
+            max-height: 10vh;
+            overflow-y: auto;
         }
 
         .main-container {
@@ -22,9 +28,10 @@
             flex-direction: column;
             min-height: 100vh;
             position: relative;
+            width: 100%;
         }
 
-        /* Imagem de Fundo com Desfoque - Versão melhorada */
+        /* Imagem de Fundo com Desfoque*/
         body::before {
             content: '';
             position: fixed;
@@ -36,8 +43,8 @@
             background-size: cover;
             background-repeat: repeat;
             background-position: center;
-            filter: blur(8px);
-            z-index: -1;
+            filter: blur(10px);
+            z-index: -2;
             transform: scale(1.2);
         }
 
@@ -46,32 +53,22 @@
             position: relative;
             height: 100vh;
             width: 100%;
-            overflow: hidden;
-        }
 
-        /* Retângulo que cobre metade da tela */
-        .retangulo {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 50%;
-            background-color: rgba(242, 209, 148, 0.68);
-            border-radius: 0 0 3% 3%;
-            z-index: 1;
         }
-
 
         /* Menu de Navegação */
         nav {
             position: relative;
             z-index: 2;
             width: 100%;
+            left: -16%;
+            top: 12%;
             text-align: center;
             padding: 20px 0;
             margin-left: 2.9%;
             font-weight: bold;
             text-shadow: 25px 25x 8px rgba(0, 0, 0, 0.23);
+            z-index: 30;\
         }
 
         nav ul {
@@ -80,7 +77,7 @@
             margin: 0;
             display: flex;
             justify-content: center;
-            gap: 80px;
+            gap: 65.5px;
         }
 
         nav ul li {
@@ -92,7 +89,7 @@
             text-decoration: none;
             font-family: 'Quattrocento', serif;
             font-size: 12px;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             text-shadow: 2px 3px 15px #401C15;
             transition: color 0.3s ease;
         }
@@ -101,19 +98,6 @@
             color: #ffffff;
         }
 
-        /* Bola Centralizada */
-        .bola {
-            width: 300px;
-            height: 300px;
-            background-color: #2A0606;
-            border-radius: 50%;
-            position: absolute;
-            top: 10%;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1;
-        }
-        
         /* Imagem principal */
         .imagem_fundo {
             width: 400px;
@@ -122,8 +106,7 @@
             top: 17%;
             left: 50%;
             transform: translateX(-50%);
-            z-index: 2;
-            overflow: hidden;
+            z-index: 6;
         }
         
         .imagem_fundo img {
@@ -131,104 +114,46 @@
             height: 100%;
             object-fit: cover;
         }
-        
-        /* Textos */
-        .amanda {
-            position: absolute;
-            top: 15%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 25px;
-            font-weight: bold;
-            color: #F2D194;
-            text-shadow: 3px 3px 20px rgba(0, 0, 0, 0.5);
-            z-index: 3;
-        }
 
-        .portfolio {
-            position: absolute;
-            top: 52%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 50px;
-            font-weight: bold;
-            color: #F2D194;
-            text-shadow: 3px 3px 20px rgba(0, 0, 0, 0.5);
-            z-index: 3;
-        }
-
-        /* RETÂNGULO ADICIONAL */
-        .retangulo-adicional {
-            position: absolute;
-            top:20%;
-            left: 8%;
-            transform: translateX(-20%);
-            width: 30%; /* Largura do retângulo */
-            height: 40%; /* 25% da altura do retângulo principal (que tem 50vh) */
-            background-color: rgba(242, 209, 148, 0.78); /* Mesma cor do retângulo principal */
-            border-radius: 0px 40px 40px 40px; /* Cantos arredondados */
-            z-index: 1;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9); /* Sombra suave */
-        }
-
-        /* ESTILO PARA A MINHA FOTO NO RETÂNGULO */
-        .imagem-eu {
-            position: absolute;
-            top: 55%;
-            left: 22%;
-            right: 80px;
-            bottom: 0;
-            height: 45%; /* Altura relativa ao retângulo */
-            max-height: 45%;
-            border-radius: 0px 0px 40px 0px;
-            object-fit: contain;
-            z-index: 2;
-            filter: sepia(60%) saturate(190%) hue-rotate(-20deg) contrast(95%) brightness(105%);
-        }
-
-        .texto-introducao {
-            position: absolute;
-            top: -30%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60%;
-            text-align: center;
-            font: andale mo
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #F2D194;
-            background-color: rgba(42, 6, 6, 0.8); /* Mesma paleta do rodapé */
-            padding: 20px;
-            border-radius: 0px 60px 0px 60px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
-        }
-        .texto-introducao h1 {
-            font-size: 2rem;
-            margin-bottom: 10px;
-            color: #F2D194; 
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 5);
-        }
-        .texto-introducao p {
-            font-size: 1.2rem;
-            line-height: 1.5;
-        }
-
-
-        /* Seção de conteúdo adicional - Versão corrigida */
+        /* Seção de conteúdo adicional */
         .content-section {
             flex: 1;
             padding: 50px 20px;
-            z-index: 2;
-            position: relative;
+            z-index: 2; 
+            position: relative;  
             min-height: 80vh;
-            color: #F2D194; /* Cor do texto para contrastar */
+            color: #F2D194;
+            width: 100%;
         }
 
-
+        /* CONTAINER PRINCIPAL REDIMENSIONADO - VERSÃO CORRIGIDA */
+        .scaled-container {
+            position: relative;
+            width: 100vw;
+            height: auto;
+            transform: scale(0.43);
+            transform-origin: top left;
+            margin: 0;
+            padding: 0;
+            margin-top: -105px; 
+            margin-bottom: 200px;
         }
 
-        /* Responsividade */
+        .complex-layout {
+            position: relative;
+            width: 2740px;
+            height: 2820px;
+            margin: 0 auto;
+            left: 113%;
+            transform: translateX(-50%);
+        }
+
         @media (max-width: 768px) {
+            .scaled-container {
+                transform: scale(0.35);
+                margin: -50px 0 300px;
+
+                
             .portfolio {
                 font-size: 40px;
             }
@@ -244,6 +169,13 @@
                 height: auto;
                 aspect-ratio: 16/9;
             }
+            
+            /* Ajustes para mobile */
+            .scaled-container {
+                transform: scale(0.25);
+                left: -10%;
+                
+            }
         }
     </style>
 </head>
@@ -251,8 +183,6 @@
     <div class="main-container">
         <!-- Seção superior com meu conteúdo original -->
         <div class="top-section">
-            <div class="retangulo"></div>
-            
             <nav>
                 <ul>
                     <li><a href="{% url 'home' %}">HOME</a></li>
@@ -262,34 +192,257 @@
                     <li><a href="{% url 'conteudo' %}">CONTEÚDO DIDÁTICO</a></li>
                 </ul>
             </nav>
+            
+            <!-- Seção para conteúdos -->
+            <div class="content-section">
+                <div class="scaled-container">
+                    <div class="complex-layout">
+                        <div data-layer="Frame 1" style="width: 2740px; height: 2820px; position: relative">
+                            <div data-layer="HOME LAYOUT" style="width: 2740px; height: 2820px; left: 0px; top: 0px; position: absolute">
+                              <div data-layer="LAYOUT HOME" style="width: 2740px; height: 2820px; left: 0px; top: 0px; position: absolute">
+                                <div data-layer="Rectangle 49" style="width: 833px; height: 199px; left: 1700px; top: 2621px; position: absolute; background: #411C14; border-top-left-radius: 28px; border-top-right-radius: 28px; border-bottom-right-radius: 48px; border-bottom-left-radius: 48px"></div>
+                                <div data-layer="Ellipse 3" style="width: 1145px; height: 1115px; left: 1595px; top: 27px; position: absolute; background: #D99311; border-radius: 9999px"></div>
+                                <div data-layer="Rectangle 10" style="width: 822px; height: 837px; left: 1491px; top: 1073px; position: absolute; opacity: 0.80; border-radius: 90px"></div>
+                                <div data-svg-wrapper data-layer="Rectangle 50" style="left: 128px; top: 266px; position: absolute">
+                                <svg width="1642" height="985" viewBox="0 0 1642 985" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 87.254C0 39.0649 63.4965 0 141.823 0H1500.18C1578.5 0 1642 39.0649 1642 87.2539V897.746C1642 945.935 1578.5 985 1500.18 985H141.823C63.4965 985 0 945.935 0 897.746V87.254Z" fill="#F2D194"/>
+                                </svg>
+                                </div>
+                                <div data-layer="Rectangle 51" style="width: 913px; height: 1308px; left: 1728px; top: 602px; position: absolute; background: #2A0606; border-radius: 90px"></div>
+                                <div data-layer="PORTFÓLIO" style="width: 917px; height: 125px; left: 1763px; top: 701px; position: absolute; text-align: justify; justify-content: flex-end; display: flex; flex-direction: column; color: #F2D194; font-size: 135px; font-family: Purple Purse; font-weight: 400; word-wrap: break-word; text-shadow: 0px 4px 4px rgba(65, 28, 20, 1.00)">PORTFÓLIO</div>
+                                <div data-layer="Rectangle 52" style="width: 754px; height: 338px; left: 1559px; top: 826px; position: absolute; background: #F2D194; border-radius: 90px"></div>
+                                <div data-layer="Rectangle 53" style="width: 1017px; height: 856px; left: 1624px; top: 1164px; position: absolute; background: #2A0606; border-radius: 110px"></div>
+                                <div data-layer="Rectangle 54" style="width: 557px; height: 241px; left: 1720px; top: 891px; position: absolute; background: #D99311; border-top-left-radius: 90px; border-bottom-right-radius: 90px; border-bottom-left-radius: 90px"></div>
+                                <div data-layer="Rectangle 55" style="width: 557px; height: 241px; left: 1728px; top: 872px; position: absolute; background: #A64208; border-top-left-radius: 90px; border-bottom-right-radius: 90px; border-bottom-left-radius: 90px"></div>
+                                <div data-layer="Rectangle 56" style="width: 658px; height: 241px; left: 1763px; top: 1251px; position: absolute; background: #A64208; border-top-left-radius: 90px; border-bottom-right-radius: 90px"></div>
+                            
+                                <!-- Logo do início -->
+                                <img data-layer="Designer__9_-removebg-preview 2" 
+                                style="width: 995px; height: 567.50px; left: 1687px; top: 85px; position: absolute" 
+                                src="{% static 'images/logo.png' %}" />
+                                
+                                <!--Flor que fica encima da cabeça da dona marcia e do toin kkkkk-->
+                                <img data-layer="2 2" 
+                                style="width: 271px; height: 271px; left: 2262px; top: 1171px; position: absolute" 
+                                src="{% static 'images/flor5.png' %}" />
 
-            <div class="bola"></div>
-            
-            <div class="imagem_fundo">
-                <img src="{% static 'images/logo.png' %}" alt="Logo Amanda">
+                                <!--Imagem para o campo que será algo que não sei ainda-->
+                                <img data-layer="1oldd 2" 
+                                style="width: 207px; height: 207px; left: 1624px; top: 891px; position: absolute" 
+                                src="{% static 'images/flor4.png' %}" />
+                                
+                                <div data-layer="Rectangle 57" style="width: 444px; height: 384px; left: 153px; top: 269px; position: absolute; background: #D99311; border-top-left-radius: 90px; border-bottom-right-radius: 90px; border-bottom-left-radius: 90px"></div>
+                                <div data-layer="Rectangle 58" style="width: 888px; height: 319px; left: 515px; top: 1413px; position: absolute; background: #A64208; border-top-left-radius: 90px; border-bottom-right-radius: 90px; border-bottom-left-radius: 90px"></div>
+
+                                <!--abelhinha-->
+                                <img data-layer="imagem_2025-04-03_141529745-removebg-preview 16" 
+                                style="width: 122px; height: 90.29px; left: 2189px; top: 859px; position: absolute;
+                                       object-fit: contain;
+                                       filter: drop-shadow(1px 2px 1px rgba(0,0,0,0.15));" 
+                                src="{% static 'images/abelhinha.png' %}" />
+
+                                <!--abelhinha-->
+                                <img data-layer="imagem_2025-04-03_141529745-removebg-preview 17" 
+                                style="width: 81.13px; height: 60.05px; left: 1670px; top: 682.57px; position: absolute; 
+                                       transform: rotate(-30deg); transform-origin: top left;
+                                       object-fit: contain;
+                                       filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.2));" 
+                                src="{% static 'images/abelhinha.png' %}" />
+
+                                <!--abelhinha-->
+                                <img data-layer="imagem_2025-04-03_141529745-removebg-preview 18" 
+                                style="width: 142.73px; height: 105.63px; left: 1780px; top: 221.83px; position: absolute; 
+                                       transform: rotate(-31deg); transform-origin: top left;
+                                       object-fit: contain;" 
+                                src="{% static 'images/abelhinha.png' %}" />                               
+
+
+                                <!--abelhinha-->
+                                <img data-layer="imagem_2025-04-03_141529745-removebg-preview 19" 
+                                style="width: 87.38px; height: 64.67px; left: 1947.58px; top: 252.03px; position: absolute; 
+                                       transform: rotate(11deg); transform-origin: top left;
+                                       object-fit: contain;" 
+                                src="{% static 'images/abelhinha.png' %}" />
+
+                                <!--abelhinha-->
+                                <img data-layer="imagem_2025-04-03_141529745-removebg-preview 20" 
+                                style="width: 65.68px; height: 48.61px; left: 2398.49px; top: 273px; position: absolute; 
+                                       transform: rotate(11deg); transform-origin: top left;
+                                       object-fit: contain;
+                                       filter: drop-shadow(1px 2px 1px rgba(0,0,0,0.15));" 
+                                src="{% static 'images/abelhinha.png' %}" />
+
+                                <!--abelhinha-->
+                                <img data-layer="imagem_2025-04-03_141529745-removebg-preview 21" 
+                                style="width: 107.97px; height: 79.91px; left: 1595px; top: 377.98px; position: absolute; 
+                                       transform: rotate(-30deg); transform-origin: top left;
+                                       object-fit: contain;" 
+                                src="{% static 'images/abelhinha.png' %}" />
+
+                                <!--abelhinha-->
+                                <img data-layer="imagem_2025-04-03_141529745-removebg-preview 22" 
+                                style="width: 286.85px; height: 212.30px; left: 2388.87px; top: 0px; position: absolute; 
+                                       transform: rotate(24deg); transform-origin: top left;
+                                       object-fit: contain;" 
+                                src="{% static 'images/abelhinha.png' %}" />
+
+                                <div data-svg-wrapper data-layer="Rectangle 59" style="left: 597px; top: 1331px; position: absolute">
+                                <svg width="962" height="1489" viewBox="0 0 962 1489" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 131.9C0 59.0535 37.2008 0 83.0902 0H878.91C924.799 0 962 59.0535 962 131.9V1357.1C962 1429.95 924.799 1489 878.91 1489H83.0902C37.2008 1489 0 1429.95 0 1357.1V131.9Z" fill="#F2D194"/>
+                                </svg>
+                                </div>
+                                <div data-layer="Rectangle 60" style="width: 1966px; height: 619px; left: 675px; top: 2129px; position: absolute; background: #592D1D; border-radius: 90px"></div>
+                                <div data-layer="Rectangle 61" style="width: 1966px; height: 619px; left: 675px; top: 2129px; position: absolute; background: #592D1D; border-radius: 90px"></div>
+                                <div data-layer="Rectangle 62" style="width: 1966px; height: 619px; left: 675px; top: 2129px; position: absolute; background: #592D1D; border-radius: 90px"></div>
+                                <div data-layer="Rectangle 64" style="width: 110px; height: 489px; left: 1403px; top: 2129px; position: absolute; background: #592D1D; border-top-left-radius: 90px"></div>
+                                <div data-layer="Rectangle 65" style="width: 454px; height: 371px; left: 102px; top: 266px; position: absolute; background: #A64208; border-bottom-right-radius: 90px"></div>
+
+                                <!-- PRIMEIRA FLOR DO LAYOUT -->
+                                <img data-layer="imagem_2025-04-03_141832936-removebg-preview 2" 
+                                style="width: 192.52px; height: 362.83px; left: 459px; top: 312.27px; position: absolute" 
+                                src="{% static 'images/flor1.png' %}" />           
+                                
+
+                                <div data-layer="Rectangle 67" style="width: 176px; height: 554px; left: 1069px; top: 2129px; position: absolute; background: #592D1D; border-top-right-radius: 90px"></div>
+                                <div data-layer="Rectangle 68" style="width: 601.99px; height: 158px; left: 1245px; top: 2698.99px; position: absolute; transform: rotate(-90deg); transform-origin: top left; background: #F2D194; border-radius: 90px"></div>
+                                <div data-layer="Rectangle 69" style="width: 570px; height: 123px; left: 675px; top: 1974px; position: absolute; background: #592D1D; border-radius: 90px"></div>
+                                <div data-layer="Rectangle 70" style="width: 301px; height: 50px; left: 103px; top: 593px; position: absolute; transform: rotate(-90deg); transform-origin: top left; background: #D99311; border-radius: 90px"></div>
+                                <div data-svg-wrapper data-layer="Rectangle 71" style="left: 168px; top: 1332px; position: absolute">
+                                <svg width="1323" height="608" viewBox="0 0 1323 608" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 53.8583C0 24.1132 51.1607 0 114.271 0H1208.73C1271.84 0 1323 24.1132 1323 53.8583V554.142C1323 583.887 1271.84 608 1208.73 608H114.271C51.1607 608 0 583.887 0 554.142V53.8583Z" fill="#F2D194"/>
+                                </svg>
+                                </div>
+                                <div data-layer="Rectangle 72" style="width: 838px; height: 280px; left: 216px; top: 1345px; position: absolute; background: #D99311; border-bottom-right-radius: 90px; border-bottom-left-radius: 90px"></div>
+                                <div data-layer="Rectangle 73" style="width: 993px; height: 269px; left: 278px; top: 1332px; position: absolute; background: #A64208; border-bottom-right-radius: 90px; border-bottom-left-radius: 90px"></div>
+
+                                <!--abelhinha-->
+                                <img data-layer="imagem_2025-04-03_141529745-removebg-preview 23" 
+                                style="width: 185.45px; height: 137.25px; left: 1128px; top: 1565.72px; position: absolute; 
+                                       transform: rotate(-30deg); transform-origin: top left;
+                                       object-fit: contain;
+                                       filter: drop-shadow(2px 4px 3px rgba(0,0,0,0.15));" 
+                                src="{% static 'images/abelhinha.png' %}" />
+
+                                <!--abelhinha-->
+                                <img data-layer="imagem_2025-04-03_141529745-removebg-preview 29" 
+                                style="width: 107.97px; height: 79.91px; left: 640px; top: 2004.98px; position: absolute; 
+                                       transform: rotate(-30deg); transform-origin: top left;
+                                       object-fit: contain;" 
+                                src="{% static 'images/abelhinha.png' %}" />
+
+                                <!--abelhinha-->
+                                <img data-layer="imagem_2025-04-03_141529745-removebg-preview 25" 
+                                style="width: 148.25px; height: 109.72px; left: 168px; top: 1345.13px; position: absolute; 
+                                       transform: rotate(-30deg); transform-origin: top left;
+                                       object-fit: contain;
+                                       filter: drop-shadow(2px 3px 2px rgba(0,0,0,0.1));" 
+                                src="{% static 'images/abelhinha.png' %}" />                                
+                                
+                                <div data-layer="Rectangle 74" style="width: 511px; height: 465px; left: 734px; top: 2183px; position: absolute; background: #A64208; border-top-left-radius: 90px; border-bottom-left-radius: 90px"></div>
+                                <img data-layer="eu 2" style="width: 460px; height: 819px; left: 785px; top: 1829px; position: absolute" src="https://placehold.co/460x819" />
+                                <div data-layer="Rectangle 75" style="width: 557px; height: 134px; left: 150px; top: 973px; position: absolute; background: #A64208; border-radius: 90px"></div>
+
+                                <!-- Flor para a caixa do meu linkedin -->
+                                <img data-layer="imagem_2025-04-03_141700176-removebg-preview 2" 
+                                style="width: 108px; height: 182.81px; left: 626px; top: 949px; position: absolute" 
+                                src="{% static 'images/flor3.png' %}" />
+
+                                <div data-layer="Rectangle 76" style="width: 527px; height: 388px; left: 31px; top: 1974px; position: absolute; background: #D99311; border-radius: 90px"></div>
+                                <div data-layer="Rectangle 77" style="width: 810px; height: 670px; left: 773px; top: 403px; position: absolute; background: #D99311; border-radius: 90px"></div>
+                                <div data-layer="Rectangle 78" style="width: 527px; height: 388px; left: 31px; top: 2416px; position: absolute; background: #D99311; border-radius: 90px"></div>
+                                <div data-layer="Rectangle 79" style="width: 1084px; height: 200px; left: 1478px; top: 2216px; position: absolute; background: #D99311; border-radius: 90px"></div>
+                                <div data-layer="Rectangle 80" style="width: 1084px; height: 200px; left: 1478px; top: 2448px; position: absolute; background: #A64208; border-radius: 90px"></div>
+                                
+                                <!--abelhinha-->
+                                <img data-layer="imagem_2025-04-03_141529745-removebg-preview 26" 
+                                style="width: 185.45px; height: 137.25px; left: 1659px; top: 1459.72px; position: absolute; transform: rotate(-30deg); transform-origin: top left" 
+                                src="/static/images/abelhinha.png" />  
+                                
+                                
+                                <!--abelhinha-->
+                                <img data-layer="imagem_2025-04-03_141529745-removebg-preview 27" 
+                                style="width: 185.45px; height: 137.25px; left: 1402.19px; top: 2113px; position: absolute; 
+                                       transform: rotate(12deg); transform-origin: top left;
+                                       object-fit: contain;
+                                       filter: drop-shadow(2px 3px 2px rgba(0,0,0,0.15));" 
+                                src="{% static 'images/abelhinha.png' %}" />
+
+                                <!--abelhinha-->
+                                <img data-layer="imagem_2025-04-03_141529745-removebg-preview 28" 
+                                style="width: 92.57px; height: 68.51px; left: 905.25px; top: 1992px; position: absolute; 
+                                       transform: rotate(25deg); transform-origin: top left;
+                                       object-fit: contain;
+                                       filter: drop-shadow(1px 2px 1px rgba(0,0,0,0.2));" 
+                                src="{% static 'images/abelhinha.png' %}" />
+
+                                <!--Setinha apontando pra mim -->
+                                <img data-layer="imagem_2025-04-03_151208584-removebg-preview 2" 
+                                style="width: 364.98px; height: 364.98px; left: 1318.74px; top: 1754.31px; position: absolute; transform: rotate(124deg); transform-origin: top left" 
+                                src="/static/images/seta.png" />                                
+                                
+                                <div data-layer="Rectangle 66" style="width: 187px; height: 1078px; left: 29px; top: 216px; position: absolute; background: #2A0606; border-radius: 100px"></div>
+                                <div data-svg-wrapper data-layer="Vector 2" style="left: 576.50px; top: 1939.50px; position: absolute">
+                                <svg width="22" height="36" viewBox="0 0 22 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.41493 1.00015H21V26.4834C21.2599 29.7991 21.2174 32.927 21 35.5001V26.4834C20.1776 15.9938 16.3282 3.62532 5.41493 1.00015Z" fill="#F2D194"/>
+                                </svg>
+                                </div>
+                                <div data-layer="Vector 3" style="width: 9.50px; height: 46px; left: 1617px; top: 1249px; position: absolute"></div>
+                                <div data-svg-wrapper data-layer="Vector 4" style="left: 1617px; top: 1251px; position: absolute">
+                                <svg width="10" height="22" viewBox="0 0 10 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.5 0H0V0.5L7 22L9.5 0Z" fill="#F2D194"/>
+                                </svg>
+                                </div>
+                                <div data-svg-wrapper data-layer="Vector 5" style="left: 206.50px; top: 1236.50px; position: absolute">
+                                <svg width="7" height="9" viewBox="0 0 7 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                </svg>
+                                </div>
+                                <div data-svg-wrapper data-layer="Vector 6" style="left: 546.50px; top: 1933px; position: absolute">
+                                <svg width="75" height="63" viewBox="0 0 75 63" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M51 62.9999C59.4 17.3999 20.8333 6.66655 0.5 6.99988L74.5 0L51 62.9999Z" fill="#F2D194"/>
+                                </svg>
+                                </div>
+                                <div data-layer="Vector 7" style="width: 0.50px; height: 29px; left: 1558px; top: 2099.50px; position: absolute"></div>
+                                <div data-svg-wrapper data-layer="Vector 8" style="left: 1558px; top: 2089px; position: absolute">
+                                <svg width="29" height="41" viewBox="0 0 29 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 40V0C3.10207 13.1838 12.382 38.2037 25.9055 40H29C28.0852 40.1204 27.1876 40.1327 26.3077 40.0464C26.1732 40.0332 26.0391 40.0178 25.9055 40H0Z" fill="#F2D194"/>
+                                </svg>
+                                </div>
+
+                                <!--última flor, dos últimos dois tópicos (também não sei o que colocar aqui kkkk)-->
+                                <img data-layer="imagem_2025-04-03_153632614-removebg-preview 1" 
+                                style="width: 311px; height: 552.34px; left: 2330px; top: 2129px; position: absolute" 
+                                src="{% static 'images/flor7.png' %}" />                               
+                                
+                                <!--Flor do diálogo de introdução -->
+                                <img data-layer="imagem_2025-04-03_153813550-removebg-preview 1" 
+                                style="width: 410px; height: 471px; left: 1353px; top: 502px; position: absolute" 
+                                src="{% static 'images/flor2.png' %}" />
+
+                                <img data-layer="imagem_2025-04-03_153932871-removebg-preview 1" style="width: 913px; height: 610px; left: 1728px; top: 1413px; position: absolute; border-bottom-right-radius: 90px" src="https://placehold.co/913x610" />
+                                <img data-layer="imagem_2025-04-03_154324317-removebg-preview 1" style="width: 411px; height: 644px; left: 269px; top: 1896px; position: absolute" src="https://placehold.co/411x644" />
+
+                                <!--Flor que fica do meu lado-->
+                                <img data-layer="bkpp (2) 1" 
+                                style="width: 289px; height: 404.74px; left: 1271px; top: 1631px; position: absolute" 
+                                src="{% static 'images/flor6.png' %}" />
+
+                                <img data-layer="imagem_2025-04-03_155250526-removebg-preview 1" style="width: 525px; height: 367.50px; left: 33px; top: 2437px; position: absolute; border-bottom-right-radius: 90px; border-bottom-left-radius: 90px" src="https://placehold.co/525x367" />
+
+                                <!--this is my happy place com o boris e a jane meus amores-->
+                                <img data-layer="imagem_2025-04-03_155655908-removebg-preview 1" 
+                                style="width: 439px; height: 173.57px; left: 0px; top: 2287px; position: absolute" 
+                                src="/static/images/happyplace.png" />
+
+                                <div data-layer="Rectangle 82" style="width: 301px; height: 50px; left: 103px; top: 593px; position: absolute; transform: rotate(-90deg); transform-origin: top left; background: #D99311; border-radius: 90px"></div>
+                              </div>
+                            </div>
+                          </div>                        <div data-layer="Frame 1" style="width: 2740px; height: 2820px; position: relative">
+                            <!-- ... todo o seu conteúdo existente ... -->
+                        </div>
+                    </div>
+                </div>
             </div>
-            
-            <div class="amanda">AMANDA</div>
-            <div class="portfolio">PORTFÓLIO</div>
         </div>
-
-        <!-- Seção para conteúdo adicional -->
-        <div class="content-section">
-            <!-- Espaço para seu conteúdo adicional -->
-            <div style="max-width: 800px; margin: 0 auto;">
-
-
-                <!-- Aqui vão ficar todos os conteúdos iniciais além do menu inicial -->
-                <div class="retangulo-adicional"></div>
-                <img src="{% static 'images/eu.png' %}" alt="Amanda" class="imagem-eu">
-                <div class="texto-introducao">
-                    <h1>SEJA BEM-VINDO!</h1>
-                    <p>
-                        Aqui, compartilho meus conhecimentos, projetos e um pouco da minha jornada. 
-                        Fique à vontade para explorar e avaliar meu trabalho! 
-                    </p>
-
-
-            </div>
+    </div>
 </body>
 </html>

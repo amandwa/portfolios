@@ -39,11 +39,10 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url("{% static 'images/fundo.jpg' %}");
+            background-color: #BF6B3B;
             background-size: cover;
             background-repeat: repeat;
             background-position: center;
-            filter: blur(10px);
             z-index: -2;
             transform: scale(1.2);
         }
@@ -131,11 +130,11 @@
             position: relative;
             width: 100vw;
             height: auto;
-            transform: scale(0.43);
+            transform: scale(0.48);
             transform-origin: top left;
             margin: 0;
             padding: 0;
-            margin-top: -105px; 
+            margin-top: -120px; 
             margin-bottom: 200px;
         }
 
@@ -144,7 +143,7 @@
             width: 2740px;
             height: 2820px;
             margin: 0 auto;
-            left: 113%;
+            left: 103%;
             transform: translateX(-50%);
         }
 
@@ -178,10 +177,15 @@
             }
         }
     </style>
+    <!--Finalização da estilização-->
+    
 </head>
 <body>
+
+    <!--Classe com todo o conteúdo, conteúdo principal-->
     <div class="main-container">
-        <!-- Seção superior com meu conteúdo original -->
+
+        <!-- <nav> = conteúdos com links para redirecionamento (views configuradas no backend) <ul> para listas-->
         <div class="top-section">
             <nav>
                 <ul>
@@ -193,15 +197,32 @@
                 </ul>
             </nav>
             
-            <!-- Seção para conteúdos -->
+
+            <!-- Setorização das divs -->
             <div class="content-section">
-                <div class="scaled-container">
-                    <div class="complex-layout">
-                        <div data-layer="Frame 1" style="width: 2740px; height: 2820px; position: relative">
-                            <div data-layer="HOME LAYOUT" style="width: 2740px; height: 2820px; left: 0px; top: 0px; position: absolute">
-                              <div data-layer="LAYOUT HOME" style="width: 2740px; height: 2820px; left: 0px; top: 0px; position: absolute">
-                                <div data-layer="Rectangle 49" style="width: 833px; height: 199px; left: 1700px; top: 2621px; position: absolute; background: #411C14; border-top-left-radius: 28px; border-top-right-radius: 28px; border-bottom-right-radius: 48px; border-bottom-left-radius: 48px"></div>
-                                <div data-layer="Ellipse 3" style="width: 1145px; height: 1115px; left: 1595px; top: 27px; position: absolute; background: #D99311; border-radius: 9999px"></div>
+            <div class="scaled-container">
+            <div class="complex-layout">
+                        
+
+                <!--Essas divs são todo o layout, um conjunto de todas as divs-->
+                <div data-layer="Frame 1" 
+                style="width: 2740px; 
+                    height: 2820px; 
+                    position: relative">
+                <div data-layer="HOME LAYOUT" 
+                    style="width: 2740px; 
+                    height: 2820px; 
+                    left: 0px; 
+                    top: 0px;       
+                    position: absolute">
+                <div data-layer="LAYOUT HOME" 
+                    style="width: 2740px; 
+                    height: 2820px; 
+                    left: 0px; 
+                    top: 0px; 
+                    position: absolute">               
+                    
+                                
                                 <div data-layer="Rectangle 10" style="width: 822px; height: 837px; left: 1491px; top: 1073px; position: absolute; opacity: 0.80; border-radius: 90px"></div>
                                 <div data-svg-wrapper data-layer="Rectangle 50" style="left: 128px; top: 266px; position: absolute">
                                 <svg width="1642" height="985" viewBox="0 0 1642 985" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -307,11 +328,13 @@
                                 <div data-layer="Rectangle 68" style="width: 601.99px; height: 158px; left: 1245px; top: 2698.99px; position: absolute; transform: rotate(-90deg); transform-origin: top left; background: #F2D194; border-radius: 90px"></div>
                                 <div data-layer="Rectangle 69" style="width: 570px; height: 123px; left: 675px; top: 1974px; position: absolute; background: #592D1D; border-radius: 90px"></div>
                                 <div data-layer="Rectangle 70" style="width: 301px; height: 50px; left: 103px; top: 593px; position: absolute; transform: rotate(-90deg); transform-origin: top left; background: #D99311; border-radius: 90px"></div>
+                                
                                 <div data-svg-wrapper data-layer="Rectangle 71" style="left: 168px; top: 1332px; position: absolute">
                                 <svg width="1323" height="608" viewBox="0 0 1323 608" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M0 53.8583C0 24.1132 51.1607 0 114.271 0H1208.73C1271.84 0 1323 24.1132 1323 53.8583V554.142C1323 583.887 1271.84 608 1208.73 608H114.271C51.1607 608 0 583.887 0 554.142V53.8583Z" fill="#F2D194"/>
                                 </svg>
                                 </div>
+
                                 <div data-layer="Rectangle 72" style="width: 838px; height: 280px; left: 216px; top: 1345px; position: absolute; background: #D99311; border-bottom-right-radius: 90px; border-bottom-left-radius: 90px"></div>
                                 <div data-layer="Rectangle 73" style="width: 993px; height: 269px; left: 278px; top: 1332px; position: absolute; background: #A64208; border-bottom-right-radius: 90px; border-bottom-left-radius: 90px"></div>
 
@@ -330,7 +353,7 @@
                                        object-fit: contain;" 
                                 src="{% static 'images/abelhinha.png' %}" />
 
-                                <!--abelhinha-->
+                                <!--abelhinha -->
                                 <img data-layer="imagem_2025-04-03_141529745-removebg-preview 25" 
                                 style="width: 148.25px; height: 109.72px; left: 168px; top: 1345.13px; position: absolute; 
                                        transform: rotate(-30deg); transform-origin: top left;
@@ -339,7 +362,12 @@
                                 src="{% static 'images/abelhinha.png' %}" />                                
                                 
                                 <div data-layer="Rectangle 74" style="width: 511px; height: 465px; left: 734px; top: 2183px; position: absolute; background: #A64208; border-top-left-radius: 90px; border-bottom-left-radius: 90px"></div>
-                                <img data-layer="eu 2" style="width: 460px; height: 819px; left: 785px; top: 1829px; position: absolute" src="https://placehold.co/460x819" />
+
+                                <!--Minha foto-->
+                                <img data-layer="eu 2" 
+                                style="width: 460px; height: 819px; left: 785px; top: 1829px; position: absolute" 
+                                src="/static/images/eu.png" />
+
                                 <div data-layer="Rectangle 75" style="width: 557px; height: 134px; left: 150px; top: 973px; position: absolute; background: #A64208; border-radius: 90px"></div>
 
                                 <!-- Flor para a caixa do meu linkedin -->
@@ -381,26 +409,32 @@
                                 src="/static/images/seta.png" />                                
                                 
                                 <div data-layer="Rectangle 66" style="width: 187px; height: 1078px; left: 29px; top: 216px; position: absolute; background: #2A0606; border-radius: 100px"></div>
+                                
                                 <div data-svg-wrapper data-layer="Vector 2" style="left: 576.50px; top: 1939.50px; position: absolute">
                                 <svg width="22" height="36" viewBox="0 0 22 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M5.41493 1.00015H21V26.4834C21.2599 29.7991 21.2174 32.927 21 35.5001V26.4834C20.1776 15.9938 16.3282 3.62532 5.41493 1.00015Z" fill="#F2D194"/>
                                 </svg>
                                 </div>
+                                
                                 <div data-layer="Vector 3" style="width: 9.50px; height: 46px; left: 1617px; top: 1249px; position: absolute"></div>
+                                
                                 <div data-svg-wrapper data-layer="Vector 4" style="left: 1617px; top: 1251px; position: absolute">
                                 <svg width="10" height="22" viewBox="0 0 10 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M9.5 0H0V0.5L7 22L9.5 0Z" fill="#F2D194"/>
                                 </svg>
                                 </div>
+                                
                                 <div data-svg-wrapper data-layer="Vector 5" style="left: 206.50px; top: 1236.50px; position: absolute">
                                 <svg width="7" height="9" viewBox="0 0 7 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 </svg>
                                 </div>
+
                                 <div data-svg-wrapper data-layer="Vector 6" style="left: 546.50px; top: 1933px; position: absolute">
                                 <svg width="75" height="63" viewBox="0 0 75 63" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M51 62.9999C59.4 17.3999 20.8333 6.66655 0.5 6.99988L74.5 0L51 62.9999Z" fill="#F2D194"/>
                                 </svg>
                                 </div>
+                                
                                 <div data-layer="Vector 7" style="width: 0.50px; height: 29px; left: 1558px; top: 2099.50px; position: absolute"></div>
                                 <div data-svg-wrapper data-layer="Vector 8" style="left: 1558px; top: 2089px; position: absolute">
                                 <svg width="29" height="41" viewBox="0 0 29 41" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -412,21 +446,26 @@
                                 <img data-layer="imagem_2025-04-03_153632614-removebg-preview 1" 
                                 style="width: 311px; height: 552.34px; left: 2330px; top: 2129px; position: absolute" 
                                 src="{% static 'images/flor7.png' %}" />                               
-                                
-                                <!--Flor do diálogo de introdução -->
-                                <img data-layer="imagem_2025-04-03_153813550-removebg-preview 1" 
-                                style="width: 410px; height: 471px; left: 1353px; top: 502px; position: absolute" 
-                                src="{% static 'images/flor2.png' %}" />
 
-                                <img data-layer="imagem_2025-04-03_153932871-removebg-preview 1" style="width: 913px; height: 610px; left: 1728px; top: 1413px; position: absolute; border-bottom-right-radius: 90px" src="https://placehold.co/913x610" />
-                                <img data-layer="imagem_2025-04-03_154324317-removebg-preview 1" style="width: 411px; height: 644px; left: 269px; top: 1896px; position: absolute" src="https://placehold.co/411x644" />
+                                <!--Dona Marcia e Toin Toin -->  
+                                <img data-layer="imagem_2025-04-03_153932871-removebg-preview 1" 
+                                style="width: 1200px; height: 900px; left: 1443px; top: 1122px; position: absolute; border-bottom-right-radius: 90px" 
+                                src="/static/images/marciaetoin.png" />
+
+                                <!--Jane Austen Prado, meu amor linda -->
+                                <img data-layer="imagem_2025-04-03_154324317-removebg-preview 1" 
+                                style="width: 711px; height: 1100px; left: 40px; top: 1600px; position: absolute" 
+                                src="/static/images/jane.png" />
 
                                 <!--Flor que fica do meu lado-->
                                 <img data-layer="bkpp (2) 1" 
-                                style="width: 289px; height: 404.74px; left: 1271px; top: 1631px; position: absolute" 
+                                style="width: 289px; height: 500px; left: 1271px; top: 1631px; position: absolute" 
                                 src="{% static 'images/flor6.png' %}" />
 
-                                <img data-layer="imagem_2025-04-03_155250526-removebg-preview 1" style="width: 525px; height: 367.50px; left: 33px; top: 2437px; position: absolute; border-bottom-right-radius: 90px; border-bottom-left-radius: 90px" src="https://placehold.co/525x367" />
+                                <!--Boris Pasternak Prado lindo meu amor -->
+                                <img data-layer="imagem_2025-04-03_155250526-removebg-preview 1" 
+                                style="width: 530px; height: 390px; left: 30px; top: 2437px; position: absolute; border-bottom-right-radius: 90px; border-bottom-left-radius: 90px" 
+                                src="/static/images/boris.png" />
 
                                 <!--this is my happy place com o boris e a jane meus amores-->
                                 <img data-layer="imagem_2025-04-03_155655908-removebg-preview 1" 
@@ -436,8 +475,8 @@
                                 <div data-layer="Rectangle 82" style="width: 301px; height: 50px; left: 103px; top: 593px; position: absolute; transform: rotate(-90deg); transform-origin: top left; background: #D99311; border-radius: 90px"></div>
                               </div>
                             </div>
-                          </div>                        <div data-layer="Frame 1" style="width: 2740px; height: 2820px; position: relative">
-                            <!-- ... todo o seu conteúdo existente ... -->
+                          </div>                        
+                          <div data-layer="Frame 1" style="width: 2740px; height: 2820px; position: relative">
                         </div>
                     </div>
                 </div>

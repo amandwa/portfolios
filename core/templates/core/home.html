@@ -10,6 +10,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
+        .evangelion-filter {
+            filter: 
+                contrast(1.5) 
+                saturate(1.8) 
+                hue-rotate(10deg) 
+                brightness(0.9);
+        }
+        
+        html, body {
+            overflow-x: hidden;
+            overflow-y: auto; /* Permite rolagem apenas se necessário */
+            max-height: fit-content; /* Ajusta ao conteúdo */
+        }
+        
+        .main-container {
+            min-height: 10vh;
+            height: 200px; /* Remove altura fixa */
+        }
+
+
         /* Estilos Gerais */
         body, html {
             margin: 0;
@@ -61,13 +81,13 @@
             z-index: 2;
             width: 100%;
             left: -16%;
-            top: 12%;
+            top: 21%;
             text-align: center;
             padding: 20px 0;
             margin-left: 2.9%;
             font-weight: bold;
             text-shadow: 25px 25x 8px rgba(0, 0, 0, 0.23);
-            z-index: 30;\
+            z-index: 30;
         }
 
         nav ul {
@@ -76,7 +96,7 @@
             margin: 0;
             display: flex;
             justify-content: center;
-            gap: 65.5px;
+            gap: 40px;
         }
 
         nav ul li {
@@ -84,13 +104,13 @@
         }
 
         nav ul li a {
-            color: #260101;
+            color: #F2D194;
             text-decoration: none;
             font-family: 'Quattrocento', serif;
             font-size: 12px;
-            letter-spacing: 1px;
-            text-shadow: 2px 3px 15px #401C15;
-            transition: color 0.3s ease;
+            letter-spacing: 8px;
+            text-shadow: 2px 3px 15px #0B0B0B; 
+            transition: color 0.1s ease;
         }
 
         nav ul li a:hover {
@@ -125,7 +145,7 @@
             width: 100%;
         }
 
-        /* CONTAINER PRINCIPAL REDIMENSIONADO - VERSÃO CORRIGIDA */
+        /* CONTAINER PRINCIPAL REDIMENSIONADO */
         .scaled-container {
             position: relative;
             width: 100vw;
@@ -134,25 +154,24 @@
             transform-origin: top left;
             margin: 0;
             padding: 0;
-            margin-top: -10px; 
-            margin-bottom: 200px;
+            margin-top: -37px; 
+            margin-bottom: 50px;
         }
 
         .complex-layout {
             position: relative;
             width: 2740px;
-            height: 2820px;
+            height: 580px;
             margin: 0 auto;
-            left: 103%;
+            left: 118%;
             transform: translateX(-50%);
         }
 
         @media (max-width: 768px) {
             .scaled-container {
-                transform: scale(0.35);
-                margin: -50px 0 300px;
-
-                
+                transform: scale(0.25);
+                margin-bottom: 30px;
+            }
             .portfolio {
                 font-size: 40px;
             }
@@ -176,7 +195,9 @@
                 
             }
 
-            
+            [data-layer] {
+                contain: layout; 
+            }
 
         }
     </style>
@@ -187,16 +208,15 @@
 
     <!--Classe com todo o conteúdo, conteúdo principal-->
     <div class="main-container">
-
         <!-- <nav> = conteúdos com links para redirecionamento (views configuradas no backend) <ul> para listas-->
         <div class="top-section">
             <nav>
                 <ul>
                     <li><a href="{% url 'home' %}">HOME</a></li>
-                    <li><a href="{% url 'sobre' %}">SOBRE MIM</a></li>
+                    <li><a href="{% url 'sobre' %}">PERFIL</a></li>
                     <li><a href="{% url 'projetos' %}">PROJETOS</a></li>
                     <li><a href="{% url 'blog' %}">BLOG</a></li>
-                    <li><a href="{% url 'conteudo' %}">CONTEÚDO DIDÁTICO</a></li>
+                    <li><a href="{% url 'conteudo' %}">ACERVO</a></li>
                 </ul>
             </nav>
             
@@ -206,173 +226,234 @@
             <div class="scaled-container">
             <div class="complex-layout">
 
-                <!--Essas divs são todo o layout, um conjunto de todas as divs-->
-                <div data-layer="Frame 1" 
-                style="width: 2740px; 
-                    height: 2820px; 
-                    position: relative
-                    margin: 20px;
-                    filter: drop-shadow(0 0 30px rgba(0, 0, 0, 2))"
-                >
 
-            
-                <div data-layer="HOME LAYOUT" 
-                    style="width: 2740px; 
-                    height: 2820px; 
-                    left: 0px; 
-                    top: 0px;       
-                    position: absolute">
-                <div data-layer="LAYOUT HOME" 
-                    style="width: 2740px; 
-                    height: 2820px; 
-                    left: 0px; 
-                    top: 0px; 
-                    position: absolute">               
+<!--Essas divs são todo o layout, um conjunto de todas as divs-->
+<div data-layer="Frame 1" 
+    style="width: 2740px; 
+    height: 2820px; 
+    position: relative
+    margin: 20px;
+    filter: drop-shadow(0 0 30px rgba(0, 0, 0, 2));
+">
+<div data-layer="HOME LAYOUT" 
+    style="width: 2740px; 
+    height: 2820px; 
+    left: 0px; 
+    top: 0px;       
+    position: absolute;
+">
+<div data-layer="LAYOUT HOME" 
+    style="width: 2740px; 
+    height: 2820px; 
+    left: 0px; 
+    top: 0px; 
+    position: absolute
+">
                     
+                    <!--Começando a classificar as divs -->
+                    
+        
+        </div>
+        <!--bola esticada comprida que fica no canto da sessão de boas-vindas -->
+        <div data-layer="Rectangle 66" 
+            style="width: 187px; 
+            height: 1078px; 
+            left: 29px; 
+            top: 216px; 
+            position: absolute; 
+            background: #2A0606; 
+            border-radius: 100px;
+            background-size: 3px 3px;
+            filter: drop-shadow(0 0 50px rgba(0, 0, 0, 2.8));
+            z-index: 99999;
+        ">
+        </div>
+        <!--bola esticada menorzinha -->
+        <div data-layer="Rectangle 82" 
+            style="width: 301px; 
+            height: 50px; 
+            left: 103px; 
+            top: 593px; 
+            position: absolute; 
+            transform: rotate(-90deg); 
+            transform-origin: top left; 
+            background: #A64208; 
+            border-radius: 90px;
+            background-size: 3px 3px; 
+            filter: drop-shadow(0 0 50px rgba(0, 0, 0, 2.8));
+            z-index: 999999;
+        ">
+        </div>
+            
+        
+        <!--Fundo geral para a sessão de boas-vindas -->
+        <div data-svg-wrapper 
+            data-layer="Rectangle 50" 
+            style="left: 128px; 
+            top: 266px; 
+            position: absolute;                                 
+            filter: drop-shadow(0 0 90px rgba(0, 0, 0, .8)); 
+            background-size: 3px 3px;  
+        ">
+    <svg width="1642" 
+            height="985" 
+            viewBox="0 0 1642 985" 
+            fill="none" 
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 87.254C0 39.0649 63.4965 0 141.823 0H1500.18C1578.5 0 1642 39.0649 1642 87.2539V897.746C1642 945.935 1578.5 985 1500.18 985H141.823C63.4965 985 0 945.935 0 897.746V87.254Z" fill="#F2D194"/>
+    </svg>
+    </div>
 
-                <!--Começando a classificar as divs -->                
-                
-                <!--Um dos quadrados que fica atrás do Toin e da dona Marcia-->
-                <div data-layer="Rectangle 10" 
-                    style="width: 822px; 
-                    height: 837px; 
-                    left: 1491px; 
-                    top: 1073px; 
-                    position: 
-                    absolute; 
-                    opacity: 0.80; 
-                    border-radius: 90px" 
-                ></div>
+                                    <!--onde vai meu linkedin--> 
+                                    <div data-layer="Rectangle 75"
+                                    style="width: 757px;
+                                    height: 134px; 
+                                    left: 150px; 
+                                    top: 973px; 
+                                    position: 
+                                    absolute; background: #2A0606;
+                                    border-radius: 90px;
+                                    filter: drop-shadow(0 0 50px rgba(0, 0, 0, 2.8));
+                                    "></div>
+
+
+        <!-- Logo do início -->
+        <img data-layer="Designer__9_-removebg-preview 2" 
+            style="width: 1195px;
+            height: 797.50px; 
+            left: 1590px;
+            top: -110px;
+            position: absolute;
+            background-size: 3px 3px;
+            filter: drop-shadow(0 0 50px rgba(0, 0, 0, 2.8));
+        "
+            src="{% static 'images/logoofc.png' %}
+        " />
+                        
+
+                                
+<!--Seção lateral direita-->                              
+        <!--fundo de toda a seção com a dona marcia e antonio-->
+        <div data-layer="Rectangle 51" 
+            style="width: 913px; 
+            height: 1308px; 
+            left: 1728px; 
+            top: 602px; 
+            position: absolute; 
+            background: #2A0606; 
+            border-radius: 90px;                               
+        "
+        ></div>
+        <!--Palavra Portfólio-->
+        <div data-layer="PORTFÓLIO" 
+            style="width: 1217px; 
+            height: 125px; 
+            left: 1763px; 
+            top: 701px; 
+            position: absolute; 
+            text-align: justify; 
+            justify-content: flex-end; 
+            display: flex; 
+            flex-direction: column; 
+            color: #F2D194; 
+            font-size: 135px; 
+            font-family: Purple Purse; 
+            font-weight: 400; 
+            word-wrap: break-word; 
+            text-shadow: 0px 4px 4px rgba(65, 28, 20, 9.00);
+            filter: drop-shadow(0 0 50px rgba(0, 0, 0, 2.8));                               
+        "
+        >PORTFÓLIO</div>
+        <!--fundo, vai armazenar o rectangle 55, conexão com a div princial-->
+        <div data-layer="Rectangle 52" 
+        style="width: 1184px; 
+               height: 338px; 
+               left: 1559px; 
+               top: 826px; 
+               position: absolute; 
+               background: #F2D194; 
+               border-radius: 90px;
+               overflow: hidden;">  
+        </div>
+        
+        <!--proteção para o lado para ficar redondo o quadradão da marcia e do Tonho-->
+        <div data-layer="Rectangle 53" 
+                style="width: 1017px; 
+                height: 856px; 
+                left: 1624px; 
+                top: 1164px; 
+                position: absolute; 
+                background: #2A0606; 
+                border-radius: 110px;
+                filter: drop-shadow(0 0 90px rgba(0, 0, 0, 2.8));
+        "
+        ></div>
+
+        <!--Dona Marcia e Toin Toin -->  
+        <img data-layer="imagem_2025-04-03_153932871-removebg-preview 1" 
+                style="width: 600px; 
+                height: 820px; 
+                left:2043px; 
+                top: 1201px; 
+                position: absolute; 
+                border-bottom-right-radius: 90px;
+                filter: drop-shadow(0 0 90px rgba(0, 0, 0, 2.8));
+                z-index: 99999;
+        " 
+            src="/static/images/toinmarcia.png
+        " 
+        />
+        <!--Laranjado de fundo da marcia e tonho-->             
+        <div data-layer="Rectangle 56" 
+                style="width: 798px; 
+                height: 681px; 
+                left: 1763px; 
+                top: 1251px; 
+                position: absolute; 
+                background: #A64208; 
+                border-top-left-radius: 90px; 
+                border-bottom-right-radius: 90px
+        ">
+        </div>
+
+
+<!--Parte de baixo -->
+
+        <!--Primeiro quadrado-->
+        <div data-layer="Rectangle 73" 
+                style="width: 993px; 
+                height: 269px; 
+                left: 350px; 
+                top: 1330px; 
+                position: absolute; 
+                background: #A64208; 
+                border-bottom-right-radius: 90px; 
+                border-bottom-left-radius: 90px;
+                background-size: 3px 3px;
+                filter: drop-shadow(0 0 90px rgba(0, 0, 0, 2.8));
+                z-index: 9999;
+        "
+        ></div>
+        <!--Sombra do primeiro quadrado-->
+        <div data-layer="Rectangle 72" 
+                style="width: 838px; 
+                height: 280px; 
+                left: 400px; 
+                top: 1360px; 
+                position: absolute; 
+                background: #D99311; 
+                border-bottom-right-radius: 90px; 
+                border-bottom-left-radius: 90px;
+                filter: drop-shadow(0 0 90px rgba(0, 0, 0, 2.8));
+                z-index: 99;
+            "
+        ></div>
+      
+
+
                                 
             
-                <!--Div para-->
-                <div data-svg-wrapper 
-                data-layer="Rectangle 50" 
-                style="left: 128px; 
-                top: 266px; 
-                position: absolute;                                 
-                mix-blend-mode: multiply;
-                background-size: 1px 1px;
-                filter: drop-shadow(0 0 50px rgba(0, 0, 0, 2.8)); 
-                background-size: 3px 3px; } 
-                ">
-
-                <svg width="1642" 
-                height="985" 
-                viewBox="0 0 1642 985" 
-                fill="none" 
-                xmlns="http://www.w3.org/2000/svg">
-                    <path d="M0 87.254C0 39.0649 63.4965 0 141.823 0H1500.18C1578.5 0 1642 39.0649 1642 87.2539V897.746C1642 945.935 1578.5 985 1500.18 985H141.823C63.4965 985 0 945.935 0 897.746V87.254Z" fill="#F2D194"/>
-                </svg>
-                </div>
-
-                                <!--Seção para a palavra PORTFOLIO -->
-                                
-                                <!--fundo de toda a seção com a dona marcia e antonio-->
-                             <div data-layer="Rectangle 51" 
-                                style="width: 913px; 
-                                height: 1308px; 
-                                left: 1728px; 
-                                top: 602px; 
-                                position: absolute; 
-                                background: #2A0606; 
-                                border-radius: 90px;
-                                z-index: 20;
-                                "
-                             ></div>
-
-                             <div data-layer="PORTFÓLIO" 
-                                style="width: 917px; 
-                                height: 125px; 
-                                left: 1763px; 
-                                top: 701px; 
-                                position: absolute; 
-                                text-align: justify; 
-                                justify-content: flex-end; 
-                                display: flex; 
-                                flex-direction: column; 
-                                color: #F2D194; 
-                                font-size: 135px; 
-                                font-family: Purple Purse; 
-                                font-weight: 400; 
-                                word-wrap: break-word; 
-                                text-shadow: 0px 4px 4px rgba(65, 28, 20, 9.00)
-                                z-index: 99;"
-                             >PORTFÓLIO</div>
-
-
-                             <!--fundo, vai armazenar o rectangle 55-->
-                             <div data-layer="Rectangle 52" 
-                                style="width: 754px; 
-                                height: 338px; 
-                                left: 1559px; 
-                                top: 826px; 
-                                position: absolute; 
-                                background: #F2D194; 
-                                border-radius: 90px
-                                z-index: 99;
-                                "
-                                z-index: 10
-                            ></div>
-
-                            <!--local para escrever-->
-                            <div data-layer="Rectangle 55" 
-                            style="width: 557px; 
-                            height: 241px; 
-                            left: 1728px; 
-                            top: 872px; 
-                            position: 
-                            absolute; 
-                            background: #A64208; 
-                            border-top-left-radius: 90px; 
-                            border-bottom-right-radius: 90px; 
-                            order-bottom-left-radius: 90px
-                            z-index: 99;
-                            "
-                            ></div>
-
-                            <!--sombra colorida do rectangle 55-->
-                            <div data-layer="Rectangle 54" 
-                                style="width: 557px; 
-                                height: 241px; 
-                                left: 1720px; 
-                                top: 891px; 
-                                position: absolute; 
-                                background: #D99311; 
-                                border-top-left-radius: 90px; 
-                                border-bottom-right-radius: 90px; 
-                                border-bottom-left-radius: 90px
-                                z-index: 99;
-                            "
-                            ></div>
-
-
-                             <div data-layer="Rectangle 53" 
-                             style="width: 1017px; 
-                             height: 856px; 
-                             left: 1624px; 
-                             top: 1164px; 
-                             position: absolute; 
-                             background: #2A0606; 
-                             border-radius: 110px
-                             z-index: 99;
-                             "></div>
                              
-
-                                <div data-layer="Rectangle 55" style="width: 557px; height: 241px; left: 1728px; top: 872px; position: absolute; background: #A64208; border-top-left-radius: 90px; border-bottom-right-radius: 90px; border-bottom-left-radius: 90px"></div>
-                                <div data-layer="Rectangle 56" style="width: 658px; height: 241px; left: 1763px; top: 1251px; position: absolute; background: #A64208; border-top-left-radius: 90px; border-bottom-right-radius: 90px"></div>
-                            
-                                <!-- Logo do início -->
-                             <img data-layer="Designer__9_-removebg-preview 2" 
-                                style="width: 1195px;
-                                height: 797.50px; 
-                                left: 1500px;
-                                top: -110px;
-                                z-index: 9;
-                                position: absolute"
-                                src="{% static 'images/logoofc.png' %}
-                             " />
-                        
 
 
 
@@ -390,46 +471,18 @@
                                 <div data-layer="Rectangle 62" style="width: 1966px; height: 619px; left: 675px; top: 2129px; position: absolute; background: #592D1D; border-radius: 90px"></div>
                                 <div data-layer="Rectangle 64" style="width: 110px; height: 489px; left: 1403px; top: 2129px; position: absolute; background: #592D1D; border-top-left-radius: 90px"></div>
                                
-
-                                <!--item de cima no canto superior esquerdo -->
-                                <div data-layer="Rectangle 65" 
-                                style="width: 454px; 
-                                height: 371px; 
-                                left: 102px; 
-                                top: 266px; 
-                                position: absolute; 
-                                background: #A64208; 
-                                border-bottom-right-radius: 90px; 
-                                z-index: 9999;
-                                "></div>
-                                <div data-layer="Rectangle 57" 
-                                style="
-                                width: 444px; 
-                                height: 384px; 
-                                left: 153px; 
-                                top: 269px; 
-                                position: absolute; 
-                                background: #D99311; 
-                                border-top-left-radius: 90px; 
-                                border-bottom-right-radius: 90px; 
-                                border-bottom-left-radius: 90px;
-                                filter: drop-shadow(0 0 50px rgba(0, 0, 0, 2.8));
-                                "></div>
-                               
                                
                                 <div data-layer="Rectangle 67" style="width: 176px; height: 554px; left: 1069px; top: 2129px; position: absolute; background: #592D1D; border-top-right-radius: 90px"></div>
                                 <div data-layer="Rectangle 68" style="width: 601.99px; height: 158px; left: 1245px; top: 2698.99px; position: absolute; transform: rotate(-90deg); transform-origin: top left; background: #F2D194; border-radius: 90px"></div>
                                 <div data-layer="Rectangle 69" style="width: 570px; height: 123px; left: 675px; top: 1974px; position: absolute; background: #592D1D; border-radius: 90px"></div>
-                                <div data-layer="Rectangle 70" style="width: 301px; height: 50px; left: 103px; top: 593px; position: absolute; transform: rotate(-90deg); transform-origin: top left; background: #D99311; border-radius: 90px"></div>
                                 
                                 <div data-svg-wrapper data-layer="Rectangle 71" style="left: 168px; top: 1332px; position: absolute">
                                 <svg width="1323" height="608" viewBox="0 0 1323 608" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M0 53.8583C0 24.1132 51.1607 0 114.271 0H1208.73C1271.84 0 1323 24.1132 1323 53.8583V554.142C1323 583.887 1271.84 608 1208.73 608H114.271C51.1607 608 0 583.887 0 554.142V53.8583Z" fill="#F2D194"/>
                                 </svg>
-                                </div>
-
-                                <div data-layer="Rectangle 72" style="width: 838px; height: 280px; left: 216px; top: 1345px; position: absolute; background: #D99311; border-bottom-right-radius: 90px; border-bottom-left-radius: 90px"></div>
-                                <div data-layer="Rectangle 73" style="width: 993px; height: 269px; left: 278px; top: 1332px; position: absolute; background: #A64208; border-bottom-right-radius: 90px; border-bottom-left-radius: 90px"></div>
+                                </div> 
+                               
+                               
                                 <div data-layer="Rectangle 74" style="width: 511px; height: 465px; left: 734px; top: 2183px; position: absolute; background: #A64208; border-top-left-radius: 90px; border-bottom-left-radius: 90px"></div>
 
                                 <!--Minha foto-->
@@ -437,35 +490,8 @@
                                 style="width: 460px; height: 819px; left: 785px; top: 1829px; position: absolute" 
                                 src="/static/images/eu.png" />
 
-
-                                <!--onde vai meu linkedin--> 
-                                 <div data-layer="Rectangle 75"
-                                 style="width: 557px;
-                                 height: 134px; 
-                                 left: 150px; 
-                                 top: 973px; 
-                                 position: 
-                                 absolute; background: #2A0606;
-                                 border-radius: 90px;
-                                 filter: drop-shadow(0 0 50px rgba(0, 0, 0, 2.8));
-                                 "></div>
-
                                 <div data-layer="Rectangle 76" style="width: 527px; height: 388px; left: 31px; top: 1974px; position: absolute; background: #D99311; border-radius: 90px"></div>
                                
-                               
-                               <!--div da mensagem de boas vindas -->
-                                <div data-layer="Rectangle 77" 
-                                style="width: 810px; 
-                                height: 670px; 
-                                left: 773px; 
-                                top: 403px; 
-                                position: absolute; 
-                                background: #D99311; 
-                                border-radius: 90px;
-                                filter: drop-shadow(0 0 50px rgba(0, 0, 0, 2.8)); 
-                                mix-blend-mode: multiply;
-                                ">
-                                </div>
                                
                                
                                
@@ -478,9 +504,7 @@
                                 <img data-layer="imagem_2025-04-03_151208584-removebg-preview 2" 
                                 style="width: 364.98px; height: 364.98px; left: 1318.74px; top: 1754.31px; position: absolute; transform: rotate(124deg); transform-origin: top left" 
                                 src="/static/images/seta.png" />                                
-                                
-                                <div data-layer="Rectangle 66" style="width: 187px; height: 1078px; left: 29px; top: 216px; position: absolute; background: #2A0606; border-radius: 100px"></div>
-                                
+                                                                
                                 <div data-svg-wrapper data-layer="Vector 2" style="left: 576.50px; top: 1939.50px; position: absolute">
                                 <svg width="22" height="36" viewBox="0 0 22 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M5.41493 1.00015H21V26.4834C21.2599 29.7991 21.2174 32.927 21 35.5001V26.4834C20.1776 15.9938 16.3282 3.62532 5.41493 1.00015Z" fill="#F2D194"/>
@@ -528,21 +552,40 @@
                                 style="width: 439px; height: 173.57px; left: 0px; top: 2287px; position: absolute" 
                                 src="/static/images/happyplace.png" />
 
-                                <!--Dona Marcia e Toin Toin -->  
-                             <img data-layer="imagem_2025-04-03_153932871-removebg-preview 1" 
-                                style="width: 600px; 
-                                height: 820px; 
-                                left:2043px; 
-                                top: 1201px; 
-                                position: absolute; 
-                                border-bottom-right-radius: 90px" 
-                                src="/static/images/marciaetonho.png
-                                z-index: 99;
-                            " />
+
+
+
+
+
+                                <svg class="containerfundo" 
+                                width="105%" 
+                                height="100%" 
+                                viewBox="0 0 100% 100%" 
+                                preserveAspectRatio="none" 
+                                style="position: absolute; 
+                                       top: 0; 
+                                       left: -50; 
+                                       z-index: -1;
+                                       ">
+                                
+                                <defs>
+                                   <!-- Filtro de suavização -->
+                                   <filter id="soften" x="0" y="0" width="100%" height="100%">
+                                       <feGaussianBlur stdDeviation="3" />
+                                   </filter>
+                                </defs>
+                                
+                                <rect width="100%" 
+                                      height="100%" 
+                                      rx="90" 
+                                      ry="90" 
+                                      fill="#604A37" 
+                                      filter="url(#soften)" 
+                                      opacity="0.9" />
+                           </svg>
 
 
                         
-                                <div data-layer="Rectangle 82" style="width: 301px; height: 50px; left: 103px; top: 593px; position: absolute; transform: rotate(-90deg); transform-origin: top left; background: #D99311; border-radius: 90px"></div>
                               </div>
                             </div>
                           </div>                        

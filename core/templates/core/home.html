@@ -51,7 +51,7 @@
             width: 100%;
         }
 
-        /* Imagem de Fundo com Desfoque*/
+        /* Imagem de Fundo com Desfoque */
         body::before {
             content: '';
             position: fixed;
@@ -59,12 +59,13 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: #3A2B20;
+            background-image: url('{% static "images/fundoss.gif" %}');
             background-size: cover; 
-            background-repeat: repeat;
+            background-repeat: no-repeat;
             background-position: center;
             z-index: -2;
-            transform: scale(1);
+            filter: blur(2px);
+            opacity: 90; /
         }
 
         /* Seção superior (conteúdo original) */
@@ -257,7 +258,7 @@
         <!--bola esticada comprida que fica no canto da sessão de boas-vindas -->
         <div data-layer="Rectangle 66" 
             style="width: 187px; 
-            height: 1078px; 
+            height: 2770px; 
             left: 29px; 
             top: 216px; 
             position: absolute; 
@@ -304,17 +305,17 @@
     </svg>
     </div>
 
-                                    <!--onde vai meu linkedin--> 
-                                    <div data-layer="Rectangle 75"
-                                    style="width: 757px;
-                                    height: 134px; 
-                                    left: 150px; 
-                                    top: 973px; 
-                                    position: 
-                                    absolute; background: #2A0606;
-                                    border-radius: 90px;
-                                    filter: drop-shadow(0 0 50px rgba(0, 0, 0, 2.8));
-                                    "></div>
+<!--onde vai meu linkedin--> 
+        <div data-layer="Rectangle 75"
+            style="width: 757px;
+            height: 134px; 
+            left: 150px; 
+            top: 973px; 
+            position:absolute; 
+            background: #2A0606;                        
+            border-radius: 90px;
+            filter: drop-shadow(0 0 50px rgba(0, 0, 0, 2.8));
+        "></div>
 
 
         <!-- Logo do início -->
@@ -367,53 +368,55 @@
         <!--fundo, vai armazenar o rectangle 55, conexão com a div princial-->
         <div data-layer="Rectangle 52" 
         style="width: 1184px; 
-               height: 338px; 
-               left: 1559px; 
-               top: 826px; 
-               position: absolute; 
-               background: #F2D194; 
-               border-radius: 90px;
-               overflow: hidden;">  
+            height: 338px; 
+            left: 1559px; 
+            top: 826px; 
+            position: absolute; 
+            background: #F2D194; 
+            border-radius: 90px;
+            overflow: hidden;">  
         </div>
         
         <!--proteção para o lado para ficar redondo o quadradão da marcia e do Tonho-->
         <div data-layer="Rectangle 53" 
-                style="width: 1017px; 
-                height: 856px; 
-                left: 1624px; 
-                top: 1164px; 
-                position: absolute; 
-                background: #2A0606; 
-                border-radius: 110px;
-                filter: drop-shadow(0 0 90px rgba(0, 0, 0, 2.8));
+            style="width: 1017px; 
+            height: 856px; 
+            left: 1624px; 
+            top: 1164px; 
+            position: absolute; 
+            background: #2A0606; 
+            border-radius: 110px;
+            filter: drop-shadow(0 0 90px rgba(0, 0, 0, 2.8));
         "
         ></div>
 
         <!--Dona Marcia e Toin Toin -->  
         <img data-layer="imagem_2025-04-03_153932871-removebg-preview 1" 
-                style="width: 600px; 
-                height: 820px; 
-                left:2043px; 
-                top: 1201px; 
-                position: absolute; 
-                border-bottom-right-radius: 90px;
-                filter: drop-shadow(0 0 90px rgba(0, 0, 0, 2.8));
-                z-index: 99999;
-        " 
+            style="width: 600px; 
+            height: 820px; 
+            left:2043px; 
+            top: 1201px; 
+            position: absolute; 
+            border-bottom-right-radius: 90px;
+            filter: drop-shadow(0 0 90px rgba(0, 0, 0, 2.8));
+            z-index: 99999;" 
             src="/static/images/toinmarcia.png
         " 
         />
         <!--Laranjado de fundo da marcia e tonho-->             
         <div data-layer="Rectangle 56" 
-                style="width: 798px; 
-                height: 681px; 
-                left: 1763px; 
-                top: 1251px; 
-                position: absolute; 
-                background: #A64208; 
-                border-top-left-radius: 90px; 
-                border-bottom-right-radius: 90px
-        ">
+        style="width: 798px; 
+               height: 681px; 
+               left: 1763px; 
+               top: 1251px; 
+               position: absolute; 
+               background-image: url('/static/images/fundoss.gif');
+               background-size: cover; 
+               background-repeat: no-repeat;
+               background-position: center;
+               border-top-left-radius: 90px; 
+               filter: blur(3px);
+               border-bottom-right-radius: 90px;">
         </div>
 
 
@@ -421,116 +424,176 @@
 
         <!--Primeiro quadrado-->
         <div data-layer="Rectangle 73" 
-                style="width: 993px; 
-                height: 269px; 
-                left: 350px; 
-                top: 1330px; 
-                position: absolute; 
-                background: #A64208; 
-                border-bottom-right-radius: 90px; 
-                border-bottom-left-radius: 90px;
-                background-size: 3px 3px;
-                filter: drop-shadow(0 0 90px rgba(0, 0, 0, 2.8));
-                z-index: 9999;
+            style="width: 993px; 
+            height: 269px; 
+            left: 350px; 
+            top: 1330px; 
+            position: absolute; 
+            background: #A64208; 
+            border-bottom-right-radius: 90px; 
+            border-bottom-left-radius: 90px;
+            background-size: 3px 3px;
+            filter: drop-shadow(0 0 90px rgba(0, 0, 0, 2.8));
+            z-index: 9999;
         "
         ></div>
         <!--Sombra colorida que fica embaixo do primeiro quadrado-->
         <div data-layer="Rectangle 72" 
-                style="width: 838px; 
-                height: 280px; 
-                left: 400px; 
-                top: 1360px; 
-                position: absolute; 
-                background: #D99311; 
-                border-bottom-right-radius: 90px; 
-                border-bottom-left-radius: 90px;
-                filter: drop-shadow(0 0 90px rgba(0, 0, 0, 2.8));
-                z-index: 99;
+            style="width: 838px; 
+            height: 280px; 
+            left: 400px; 
+            top: 1360px; 
+            position: absolute; 
+            background: #D99311; 
+            border-bottom-right-radius: 90px; 
+            border-bottom-left-radius: 90px;
+            filter: drop-shadow(0 0 90px rgba(0, 0, 0, 2.8));
+            z-index: 99;
             "
         ></div>
         <!--Foto da mae-->
         <img data-layer="eu 2" 
-                style="width: 500px; 
-                height: 790px; 
-                left: 1399px; 
-                top: 1960px; 
-                position: absolute;
-                z-index: 99999;"
-                src="/static/images/mamae.png" 
-        />      
+            style="width: 500px; 
+            height: 790px; 
+            left: 1399px; 
+            top: 1960px; 
+            position: absolute;
+            z-index: 99999;"
+            src="/static/images/mamae.png"
+        />
+        <!--Foto da vovó-->
+        <img data-layer="eu 3" 
+            style="width: 500px; 
+            height: 800px; 
+            left: 1040px; 
+            top: 1940px; 
+            position: absolute;
+            z-index: 99998;" 
+            src="/static/images/vovo.png"
+        />
+        </svg>
+        </div> 
+        <!--Quadrado laranjado que fica atrás da Vo-->
+        <div data-layer="Rectangle 74" 
+            style="width: 611px; 
+            height: 765px; 
+            left: 734px; 
+            top: 1974px; 
+            position: absolute; 
+            background: #A64208; 
+            border-top-left-radius: 90px; 
+   border-bottom-left-radius: 90px;
+   filter: drop-shadow(0 0 90px rgba(0, 0, 0, 2.8));
+   "></div>      
         <!--Boris Pasternak Prado-->
             <img data-layer="imagem_2025-04-03_155250526-removebg-preview 1" 
-                style="width: 500px; 
-                height: 440px; 
-                left: 30px; 
-                top: 2437px; 
-                position: absolute; 
-                border-bottom-right-radius: 90px; 
-                border-bottom-left-radius: 90px;
-                filter: drop-shadow(0 0 90px rgba(0, 0, 0, 2.8));
-                z-index: 99999;
+            style="width: 500px; 
+            height: 440px; 
+            left: 30px; 
+            top: 2437px; 
+            position: absolute; 
+            border-bottom-right-radius: 90px; 
+            border-bottom-left-radius: 90px;
+            filter: drop-shadow(0 0 90px rgba(0, 0, 0, 2.8));
+            z-index: 99999999999;
             " 
-                src="/static/images/borix.png" />
+            src="/static/images/borix.png" />
+        <!--Quadrado atrás do Boris -->
+        <div data-layer="Rectangle 78" 
+            style="width: 1527px;    
+            height: 388px; 
+            left: 31px; 
+            top: 2416px; 
+            position: absolute; background: #D99311; border-radius: 90px"></div>
+
+            
         <!--Jane Austen Prado -->
             <img data-layer="imagem_2025-04-03_154324317-removebg-preview 1" 
-                style="width: 401px; 
-                height: 600px; 
-                left: 150px; 
-                top: 1820px; 
-                position: absolute;
-                z-index: 9999; " 
-                src="/static/images/janes.png" />                
-                                
-        <!--this is my happy place com o boris e a jane meus amores-->
-            <img data-layer="imagem_2025-04-03_155655908-removebg-preview 1" 
-                style="width: 439px; 
-                height: 173.57px; 
-                left: 0px; 
-                top: 2287px; 
-                position: absolute;
-                z-index: 999999999;
-                " 
-                src="/static/images/happyplace.png" />    
-                             
+            style="width: 401px; 
+            height: 600px; 
+            left: 150px; 
+            top: 1820px; 
+            position: absolute;
+            z-index: 999999999;
+            filter: drop-shadow(0 0 90px rgba(0, 0, 0, 2.8));" 
+            src="/static/images/janes.png" />                
+        <!--Quadrado que vai atrás da Jane -->                        
+            <div data-layer="Rectangle 76" 
+            style="width: 527px; 
+            height: 388px; 
+            left: 72px; 
+            top: 1974px; 
+            position: absolute; 
+            background: #D99311; 
+            z-index: 9999999; 
+            border-top-left-radius: 90px;
+            border-bottom-left-radius: 90px;
+
+            "></div>
+            
+       <!-- DIV/SVG que fica atrás de tudo em baixo,  -->
+        <!--Aqui, é onde "chamo" a div-->
+        <div data-svg-wrapper data-layer="Rectangle 59" 
+            style="left: 597px; 
+            top: 1331px; 
+            position: absolute;
+            filter: drop-shadow(0 0 90px rgba(0, 0, 0, 2));
+        ">
+        <!--aqui é onde "desenho" o SVG-->
+            <svg width="962" 
+            height="1489" 
+            viewBox="0 0 962 1489" 
+            fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 131.9C0 59.0535 37.2008 0 83.0902 0H878.91C924.799 0 962 59.0535 962 131.9V1357.1C962 1429.95 924.799 1489 878.91 1489H83.0902C37.2008 1489 0 1429.95 0 1357.1V131.9Z" fill="#F2D194"/>
+        </svg>
+        </div>
+        <!--Parte do lado esquerdo do fundo principal da parte de baixo -->
+        <div data-svg-wrapper data-layer="Rectangle 71" 
+            style="left: 168px; 
+            top: 1332px; 
+            position: absolute;
+">
 
 
+<!-- Lado direito da parte de baixo -->
+        <!-- Parte de trás do texto do lado direito -->
+        <div data-layer="Rectangle 62" 
+            style="width: 1966px; 
+            height: 619px; 
+            left: 675px; 
+            top: 2800px; 
+            position: absolute; 
+            background: #592D1D; 
+            border-radius: 90px;
+            filter: drop-shadow(0 0 90px rgba(0, 0, 0, 2));
+            z-index: 1;
 
-
-                                <div data-layer="Rectangle 58" style="width: 888px; height: 319px; left: 515px; top: 1413px; position: absolute; background: #A64208; border-top-left-radius: 90px; border-bottom-right-radius: 90px; border-bottom-left-radius: 90px"></div>
-
-                                <div data-svg-wrapper data-layer="Rectangle 59" style="left: 597px; top: 1331px; position: absolute">
-                                <svg width="962" height="1489" viewBox="0 0 962 1489" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M0 131.9C0 59.0535 37.2008 0 83.0902 0H878.91C924.799 0 962 59.0535 962 131.9V1357.1C962 1429.95 924.799 1489 878.91 1489H83.0902C37.2008 1489 0 1429.95 0 1357.1V131.9Z" fill="#F2D194"/>
-                                </svg>
-
-                                </div>
-                                <div data-layer="Rectangle 60" style="width: 1966px; height: 619px; left: 675px; top: 2129px; position: absolute; background: #592D1D; border-radius: 90px"></div>
-                                <div data-layer="Rectangle 61" style="width: 1966px; height: 619px; left: 675px; top: 2129px; position: absolute; background: #592D1D; border-radius: 90px"></div>
-                                <div data-layer="Rectangle 62" style="width: 1966px; height: 619px; left: 675px; top: 2129px; position: absolute; background: #592D1D; border-radius: 90px"></div>
-                                <div data-layer="Rectangle 64" style="width: 110px; height: 489px; left: 1403px; top: 2129px; position: absolute; background: #592D1D; border-top-left-radius: 90px"></div>
-                               
-                               
-                                <div data-layer="Rectangle 67" style="width: 176px; height: 554px; left: 1069px; top: 2129px; position: absolute; background: #592D1D; border-top-right-radius: 90px"></div>
-                                <div data-layer="Rectangle 68" style="width: 601.99px; height: 158px; left: 1245px; top: 2698.99px; position: absolute; transform: rotate(-90deg); transform-origin: top left; background: #F2D194; border-radius: 90px"></div>
-                                <div data-layer="Rectangle 69" style="width: 570px; height: 123px; left: 675px; top: 1974px; position: absolute; background: #592D1D; border-radius: 90px"></div>
-                                
-                                <div data-svg-wrapper data-layer="Rectangle 71" style="left: 168px; top: 1332px; position: absolute">
-                                <svg width="1323" height="608" viewBox="0 0 1323 608" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M0 53.8583C0 24.1132 51.1607 0 114.271 0H1208.73C1271.84 0 1323 24.1132 1323 53.8583V554.142C1323 583.887 1271.84 608 1208.73 608H114.271C51.1607 608 0 583.887 0 554.142V53.8583Z" fill="#F2D194"/>
-                                </svg>
-                                </div> 
-                               
-                               
-                                <div data-layer="Rectangle 74" style="width: 511px; height: 465px; left: 734px; top: 2183px; position: absolute; background: #A64208; border-top-left-radius: 90px; border-bottom-left-radius: 90px"></div>
-
-
-                                <div data-layer="Rectangle 76" style="width: 527px; height: 388px; left: 31px; top: 1974px; position: absolute; background: #D99311; border-radius: 90px"></div>
+            "></div>
+            <svg width="1323" 
+            height="608" 
+            viewBox="0 0 1323 608" 
+            fill="none" 
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 53.8583C0 24.1132 51.1607 0 114.271 0H1208.73C1271.84 0 1323 24.1132 1323 53.8583V554.142C1323 583.887 1271.84 608 1208.73 608H114.271C51.1607 608 0 583.887 0 554.142V53.8583Z" fill="#F2D194"/>
+        
+            <!--Quadrado com cantos arredondados de cima, lado direito embaixo-->
+        <div data-layer="Rectangle 79" 
+            style="width: 180px;   
+            height: 388px; 
+            left: 508px; 
+            top: 640px; 
+            position: absolute; 
+            background: #D99311; 
+            border-bottom-right-radius: 90px;
+        
+        "></div>
+        
+        
+        
+                         
                                
                                
                                
-                               
-                                <div data-layer="Rectangle 78" style="width: 527px; height: 388px; left: 31px; top: 2416px; position: absolute; background: #D99311; border-radius: 90px"></div>
-                                <div data-layer="Rectangle 79" style="width: 1084px; height: 200px; left: 1478px; top: 2216px; position: absolute; background: #D99311; border-radius: 90px"></div>
                                 <div data-layer="Rectangle 80" style="width: 1084px; height: 200px; left: 1478px; top: 2448px; position: absolute; background: #A64208; border-radius: 90px"></div>
                             
 
@@ -539,37 +602,16 @@
                                 style="width: 364.98px; height: 364.98px; left: 1318.74px; top: 1754.31px; position: absolute; transform: rotate(124deg); transform-origin: top left" 
                                 src="/static/images/seta.png" />                                
                                                                 
-                                <div data-svg-wrapper data-layer="Vector 2" style="left: 576.50px; top: 1939.50px; position: absolute">
-                                <svg width="22" height="36" viewBox="0 0 22 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5.41493 1.00015H21V26.4834C21.2599 29.7991 21.2174 32.927 21 35.5001V26.4834C20.1776 15.9938 16.3282 3.62532 5.41493 1.00015Z" fill="#F2D194"/>
-                                </svg>
-                                </div>
                                 
-                                <div data-layer="Vector 3" style="width: 9.50px; height: 46px; left: 1617px; top: 1249px; position: absolute"></div>
-                                
-                                <div data-svg-wrapper data-layer="Vector 4" style="left: 1617px; top: 1251px; position: absolute">
-                                <svg width="10" height="22" viewBox="0 0 10 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9.5 0H0V0.5L7 22L9.5 0Z" fill="#F2D194"/>
-                                </svg>
-                                </div>
-                                
-                                <div data-svg-wrapper data-layer="Vector 5" style="left: 206.50px; top: 1236.50px; position: absolute">
-                                <svg width="7" height="9" viewBox="0 0 7 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                </svg>
-                                </div>
+                    
 
+                                <!-- cantinho da jane que fica arredondado com esse-->
                                 <div data-svg-wrapper data-layer="Vector 6" style="left: 546.50px; top: 1933px; position: absolute">
                                 <svg width="75" height="63" viewBox="0 0 75 63" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M51 62.9999C59.4 17.3999 20.8333 6.66655 0.5 6.99988L74.5 0L51 62.9999Z" fill="#F2D194"/>
                                 </svg>
                                 </div>
-                                
-                                <div data-layer="Vector 7" style="width: 0.50px; height: 29px; left: 1558px; top: 2099.50px; position: absolute"></div>
-                                <div data-svg-wrapper data-layer="Vector 8" style="left: 1558px; top: 2089px; position: absolute">
-                                <svg width="29" height="41" viewBox="0 0 29 41" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M0 40V0C3.10207 13.1838 12.382 38.2037 25.9055 40H29C28.0852 40.1204 27.1876 40.1327 26.3077 40.0464C26.1732 40.0332 26.0391 40.0178 25.9055 40H0Z" fill="#F2D194"/>
-                                </svg>
-                                </div>                              
+                                             
 
 
 
@@ -597,11 +639,11 @@
             height="100%" 
             rx="90" 
             ry="90" 
-            fill="#604A37" 
+            fill="#E8B97F" 
+            filter: blur(6px);
             filter="url(#soften)" 
             opacity="0.9" />
         </svg>
-
 
                         
                               </div>

@@ -18,6 +18,21 @@
                 brightness(0.9);
         }
         
+        .outline-box {
+            position: absolute;
+            top: 0;
+            left: -9087;
+            width: 3040px; 
+            height: 3020px; 
+            background-color: rgba(255, 255, 255, 0.8);            
+            border-radius: 80px; 
+            box-sizing: border-box;
+            pointer-events: none; 
+            z-index: -99;
+            opacity: 0.8;
+            box-shadow: 0 0 80px rgba(0, 0, 0, 9);
+        }
+
         html, body {
             overflow-x: hidden;
             overflow-y: auto; /* Permite rolagem apenas se necessário */
@@ -226,7 +241,7 @@
             <div class="content-section">
             <div class="scaled-container">
             <div class="complex-layout">
-
+            <div class="outline-box"></div>
 
 <!--Essas divs são todo o layout, um conjunto de todas as divs-->
 <div data-layer="Frame 1" 
@@ -406,7 +421,7 @@
         <!--Laranjado de fundo da marcia e tonho-->             
         <div data-layer="Rectangle 56" 
         style="width: 798px;        
-               height: 681px; 
+               height: 681px; cd
                left: 1763px; 
                top: 1251px; 
                position: absolute; 
@@ -456,7 +471,7 @@
             style="width: 500px; 
             height: 790px; 
             left: 1399px; 
-            top: 1960px; 
+            top: 1964px; 
             position: absolute;
             z-index: 99999;"
             src="/static/images/mamae.png"
@@ -466,7 +481,7 @@
             style="width: 500px; 
             height: 800px; 
             left: 1040px; 
-            top: 1940px; 
+            top: 1954px; 
             position: absolute;
             z-index: 99998;" 
             src="/static/images/vovo.png"
@@ -558,12 +573,12 @@
 <!-- Lado direito da parte de baixo -->
         <!-- Parte de trás do texto do lado direito -->
         <div data-layer="Rectangle 62" 
-            style="width: 1966px; 
-            height: 619px; 
-            left: 675px; 
-            top: 2800px; 
+            style="width: 1600px; 
+            height: 519px; 
+            left: 830px; 
+            top: 900px; 
             position: absolute; 
-            background: #592D1D; 
+            background: #2A0606; 
             border-radius: 90px;
             filter: drop-shadow(0 0 90px rgba(0, 0, 0, 2));
             z-index: 1;
@@ -576,25 +591,13 @@
             xmlns="http://www.w3.org/2000/svg">
             <path d="M0 53.8583C0 24.1132 51.1607 0 114.271 0H1208.73C1271.84 0 1323 24.1132 1323 53.8583V554.142C1323 583.887 1271.84 608 1208.73 608H114.271C51.1607 608 0 583.887 0 554.142V53.8583Z" fill="#F2D194"/>
         
-            <!--Quadrado com cantos arredondados de cima, lado direito embaixo-->
-        <div data-layer="Rectangle 79" 
-            style="width: 180px;   
-            height: 388px; 
-            left: 508px; 
-            top: 640px; 
-            position: absolute; 
-            background: #D99311; 
-            border-bottom-right-radius: 90px;
-        
-        "></div>
-        
+
         
         
                          
                                
                                
                                
-                                <div data-layer="Rectangle 80" style="width: 1084px; height: 200px; left: 1478px; top: 2448px; position: absolute; background: #A64208; border-radius: 90px"></div>
                             
 
                                 <!--Setinha apontando pra mim -->
@@ -605,12 +608,6 @@
                                 
                     
 
-                                <!-- cantinho da jane que fica arredondado com esse-->
-                                <div data-svg-wrapper data-layer="Vector 6" style="left: 546.50px; top: 1933px; position: absolute">
-                                <svg width="75" height="63" viewBox="0 0 75 63" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M51 62.9999C59.4 17.3999 20.8333 6.66655 0.5 6.99988L74.5 0L51 62.9999Z" fill="#F2D194"/>
-                                </svg>
-                                </div>
                                              
 
 
@@ -619,31 +616,7 @@
 
 
 
-    <!-- Quadro envolta de tudo -->
-        <svg class="containerfundo" 
-            width="105%" 
-            height="105%" 
-            viewBox="0 0 100% 100%" 
-            preserveAspectRatio="none" 
-            style="position: absolute; 
-            top: 0; 
-            left: -50; 
-            z-index: -1;
-        ">                
-        <defs>
-        <filter id="soften" x="0" y="0" width="100%" height="100%">
-        <feGaussianBlur stdDeviation="3" />
-        </filter>
-        </defs>                
-            <rect width="100%" 
-            height="100%" 
-            rx="90" 
-            ry="90" 
-            fill="#E8B97F" 
-            filter: blur(6px);
-            filter="url(#soften)" 
-            opacity="0.9" />
-        </svg>
+
 
                         
                               </div>

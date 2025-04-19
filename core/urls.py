@@ -8,3 +8,4 @@ urlpatterns = [
     path('blog/', views.blog, name='blog'),
     path('conteudo/', views.conteudo, name='conteudo'),
 ]
+ 

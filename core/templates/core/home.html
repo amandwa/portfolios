@@ -24,7 +24,7 @@
 .intro {
     position: relative;
     text-align: center;
-    top: 650px;
+    top: 640px;
     left:-165px;
     padding: 60px 40px;
     z-index: 99999;
@@ -197,9 +197,9 @@
             padding: 50px 20px;
             z-index: 2; 
             position: relative;  
-            min-height: 80vh;
+            min-height: 20vh;
             color: #F2D194;
-            width: 100%;
+            width: 400%;
         }
 
         /* CONTAINER PRINCIPAL REDIMENSIONADO */
@@ -381,17 +381,19 @@
     </div>
 
 <!--onde vai meu linkedin--> 
-        <div data-layer="Rectangle 75"
-            style="width: 757px;
-            height: 134px; 
-            left: 150px; 
-            top: 973px; 
-            position:absolute; 
-            background: #604A37;
-                                    
-            border-radius: 90px;
-            filter: drop-shadow(0 0 50px rgba(0, 0, 0, 2.8));
-        "></div>
+        <!-- Logo do Linkedin -->
+        <img data-layer="linkedin" 
+            style=" 
+            height: 300px; 
+            left: 350px; 
+            top: 890px;
+            position: absolute;
+            background-size: 3px 3px;
+            z-index: 99999999;
+        "
+            src="{% static 'images/linkedin.png' %}
+        " />
+
 
 
         <!-- Logo do início -->

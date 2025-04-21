@@ -23,7 +23,7 @@
 .intro {
     position: relative;
     text-align: center;
-    top: 210px;
+    top: 200px;
     left:-165px;
     padding: 60px 40px;
     z-index: 99999;
@@ -42,7 +42,7 @@
     .intro2 {
         position: relative;
         text-align: center;
-        top: 130px;
+        top: 90px;
         left: 600px;
         padding: 60px 40px;
         z-index: 99999;
@@ -61,8 +61,8 @@
     .gatos {
         position: relative;
         text-align: center;
-        top: 150px;
-        left: -220px;
+        top: 120px;
+        left: -200px;
         padding: 60px 40px;
         z-index: 99999;
         color: #2A0606; /* Cor do texto */
@@ -80,7 +80,7 @@
     .muies {
         position: relative;
         text-align: center;
-        top: 320px;
+        top: 225px;
         left: 610px;
         padding: 60px 40px;
         z-index: 99999;
@@ -93,7 +93,7 @@
         max-width: 800px;
         margin: 0 auto;
         text-align: left;
-        text-shadow: 1px 2px 10px rgba(0, 0, 0, 0.4); /* Sombra para os parágrafos */
+        text-shadow: 1px 2px 10px rgba(0, 0, 0, 2); /* Sombra para os parágrafos */
     }
 
         .outline-box {
@@ -108,7 +108,7 @@
 
             z-index: -99;
             opacity: 0.5;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 9);
+            box-shadow: 0 0 40px 100px rgba(0, 0, 0, 3);
         }
 
         html, body {
@@ -175,7 +175,7 @@
             z-index: 2;
             width: 100%;
             left: -16%;
-            top: -117%;
+            top: -130%;
             text-align: center;
             padding: 20px 0;
             margin-left: 2.9%;
@@ -248,7 +248,7 @@
             transform-origin: top left;
             margin: 0;
             padding: 0;
-            margin-top: -925px; 
+            margin-top: -1010px; 
         }
 
         .complex-layout {
@@ -293,6 +293,56 @@
             }
 
         }
+
+
+            /* Estilos do rodapé/comentários */
+            .footer-comments {
+                position: relative;
+                width: 100%;
+                background: #2A0606;
+                border-top: 3px solid #F49C36;
+                padding: 60px 0;
+                z-index: 10;
+                box-shadow: 0 -20px 50px rgba(0, 0, 0, 0.7);
+                
+            
+                margin-top: 1900px; 
+                transform: scale(0.4); 
+                transform-origin: top left; 
+                margin-bottom: -800px; 
+            }
+
+
+    .footer-container {
+        width: 80%;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 40px;
+        background: rgba(96, 74, 55, 0.4); /* #604A37 com transparência */
+        border-radius: 30px;
+        border: 2px solid #F2D194;
+        box-shadow: 
+            0 0 30px rgba(242, 209, 148, 0.2),
+            inset 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .footer-title {
+        font-family: 'Purple Purse', cursive;
+        color: #F2D194;
+        font-size: 3rem;
+        text-align: center;
+        margin-bottom: 40px;
+        text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
+    }
+
+    .placeholder-text {
+        font-family: 'Nunito', sans-serif;
+        color: #F2D194;
+        text-align: center;
+        font-size: 1.2rem;
+        opacity: 0.7;
+        padding: 100px 0;
+    }
     </style>
     <!--Finalização da estilização-->
 
@@ -302,11 +352,15 @@
     <!-- Seção de introdução com o texto desejado -->
 <div class="intro">    
     <p>
-        Acesse o <strong>Perfil</strong> para saber mais sobre minha atuação e <br> trajetória, 
-        veja o que ando criando em <strong>Projetos</strong>, passeie <br> pelo <strong>Blog</strong> e 
-        em breve, explore o <strong>Acervo</strong> com conteúdos e aulas. <br>
-        Fique à vontade! 
+        <h4> <strong>SEJA BEM-VINDO AO MEU PORTFÓLIO! </strong> </h4>
     </p>
+        <p> 
+            Acesse o <strong>Perfil</strong> para saber mais sobre minha atuação e <br> trajetória, 
+            veja o que ando criando em <strong>Projetos</strong>, passeie <br> pelo <strong>Blog</strong> e 
+            em breve, explore o <strong>Acervo</strong> com conteúdos e aulas. <br>
+            Fique à vontade! 
+        </p>
+    
         </div>
 
 <div class="intro2">    
@@ -327,16 +381,15 @@
     
 <div class="muies">    
         <p>
-            Mãe e vó: <br> 
-            meus primeiros amores. Mulheres <br> 
-            fortes que me ensinaram a ser forte.<br> 
-            Tudo o que tenho conquistado <br>
-            carrega um pedacinho de vocês. <br>
+              
+            Mãe e vó: meus primeiros amores. <br>
+            Mulheres fortes que me ensinaram <br> 
+            a ser forte. 
+            Tudo o que tenho <br>
+            conquistado carrega um pedacinho <br>
             
-            Com todo o amor do mundo, <br>
-            mesmo de longe, <br> 
-            obrigada por tudo. 
-            Amo vocês.<br> 
+            de vocês. Com todo o amor do mundo, <br> 
+            obrigada por tudo. Amo vocês.<br> 
 
             </p>
                 </div>
@@ -720,9 +773,17 @@
             
 
 
-<!--LETRAS / TEXTO-->
+<!--Rodapé-->
 
-                    
+<footer class="footer-comments">
+    <div class="footer-container">
+        <h2 class="footer-title"> COMENTÁRIOS</h2>
+        <div class="placeholder-text">
+            Área reservada para comentários e avaliações<br>
+            (Em breve)
+        </div>
+    </div>
+</footer>                 
 
 
                               </div>

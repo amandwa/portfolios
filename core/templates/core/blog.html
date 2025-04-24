@@ -1,11 +1,742 @@
 <!DOCTYPE html>
-<html>
+{% load static %}
+<html lang="pt-br">
 <head>
-    <title>Blog</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amanda - Portfólio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Purple+Purse&family=Quattrocento&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        .evangelion-filter {
+            filter: 
+                contrast(1.5) 
+                saturate(1.8) 
+                hue-rotate(10deg) 
+                brightness(0.9);
+        }
+
+
+        /* Estilizando a seção de introdução */
+.intro {
+    position: relative;
+    text-align: center;
+    top: 200px;
+    left:-165px;
+    padding: 60px 40px;
+    z-index: 99999;
+    color: #2A0606; /* Cor do texto */
+}
+.intro p {
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    text-shadow: 1px 2px 10px rgba(0, 0, 0, 0.4); /* Sombra para os parágrafos */
+}
+
+
+    .intro2 {
+        position: relative;
+        text-align: center;
+        top: 90px;
+        left: 600px;
+        padding: 60px 40px;
+        z-index: 99999;
+        color: #2A0606; /* Cor do texto */
+    }
+    .intro2 p {
+        font-family: 'Nunito', sans-serif;
+        font-size: 14px;
+        line-height: 1.6;
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: left;
+        text-shadow: 1px 2px 10px rgba(0, 0, 0, 0.4); /* Sombra para os parágrafos */
+    }
+
+    .gatos {
+        position: relative;
+        text-align: center;
+        top: 120px;
+        left: -200px;
+        padding: 60px 40px;
+        z-index: 99999;
+        color: #2A0606; /* Cor do texto */
+    }
+    .gatos p {
+        font-family: 'Nunito';
+        font-size: 14px;
+        line-height: 1.6;
+        max-width: 800px;
+        margin: 0 auto;
+        text-shadow: 1px 2px 10px rgba(2, 2, 2, 9); 
+    }
+
+
+    .muies {
+        position: relative;
+        text-align: center;
+        top: 225px;
+        left: 610px;
+        padding: 60px 40px;
+        z-index: 99999;
+        color: #F2D194; /* Cor do texto */
+    }
+    .muies p {
+        font-family: 'Nunito', sans-serif;
+        font-size: 14px;
+        line-height: 1.6;
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: left;
+        text-shadow: 1px 2px 10px rgba(0, 0, 0, 2); /* Sombra para os parágrafos */
+    }
+
+        .outline-box {
+            position: absolute;
+            top: 0;
+            left: -75px;
+            width: 2900px; 
+            height: 3120px; 
+            background-color: #604A37;            
+            border-radius: 140px; 
+            box-sizing: border-box;
+
+            z-index: -99;
+            opacity: 0.5;
+            box-shadow: 0 0 40px 100px rgba(0, 0, 0, 3);
+        }
+
+        html, body {
+            overflow-x: hidden;
+            overflow-y: auto; /* Permite rolagem apenas se necessário */
+            max-height: fit-content; /* Ajusta ao conteúdo */
+        }
+        
+        .main-container {
+            min-height: 10vh;
+            height: 200px; /* Remove altura fixa */
+        }
+
+
+        /* Estilos Gerais */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Purple Purse', cursive;
+            overflow-x: hidden;
+            min-height: 100vh;
+            width: 100%;
+            max-height: 10vh;
+            overflow-y: auto;
+        }
+
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            position: relative;
+            width: 100%;
+        }
+
+        /* Imagem de Fundo com Desfoque */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('{% static "images/fundoss.gif" %}');
+            background-size: cover; 
+            background-repeat: no-repeat;
+            background-position: center;
+            z-index: -2;
+            filter: blur(7px);
+            opacity: 100; /
+        }
+
+        /* Seção superior (conteúdo original) */
+        .top-section {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+
+        }
+
+        /* Menu de Navegação */
+        nav {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            left: -16%;
+            top: -130%;
+            text-align: center;
+            padding: 20px 0;
+            margin-left: 2.9%;
+            font-weight: bold;
+            text-shadow: 25px 25x 8px rgba(0, 0, 0, 2);
+            z-index: 30;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: #F2D194;
+            text-decoration: none;
+            font-family: 'Quattrocento', serif;
+            font-size: 12px;
+            letter-spacing: 8px;
+            text-shadow: 2px 3px 60px #0B0B0B; 
+            transition: color 0.1s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ffffff;
+        }
+
+        /* Imagem principal */
+        .imagem_fundo {
+            width: 400px;
+            height: 225px;
+            position: absolute;
+            top: 17%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 6;
+        }
+        
+        .imagem_fundo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Seção de conteúdo adicional */
+        .content-section {
+            flex: 1;
+            padding: 50px 20px;
+            z-index: 2; 
+            position: relative;  
+            min-height: 20vh;
+            color: #F2D194;
+            width: 400%;
+        }
+
+        /* CONTAINER PRINCIPAL REDIMENSIONADO */
+        .scaled-container {
+            position: relative;
+            width: 100vw;
+            height: 200px;
+            transform: scale(0.40);
+            transform-origin: top left;
+            margin: 0;
+            padding: 0;
+            margin-top: -1010px; 
+        }
+
+        .complex-layout {
+            position: relative;
+            width: 2740px;
+            height: 580px;
+            margin: 0 auto;
+            left: 118%;
+            transform: translateX(-50%);
+        }
+
+        @media (max-width: 768px) {
+            .scaled-container {
+                transform: scale(0.25);
+                margin-bottom: 30px;
+            }
+            .portfolio {
+                font-size: 40px;
+            }
+            .amanda {
+                font-size: 20px;
+            }
+            nav ul {
+                gap: 30px;
+                flex-wrap: wrap;
+            }
+            .imagem_fundo {
+                width: 90%;
+                height: auto;
+                aspect-ratio: 16/9;
+            }
+            
+            /* Ajustes para mobile */
+            .scaled-container {
+                transform: scale(0.25);
+                left: -10%;
+                
+            }
+
+            [data-layer] {
+                contain: layout; 
+            }
+
+        }
+
+
+
+
+
+
+    </style>
+    <!--Finalização da estilização-->
+
 </head>
 <body>
-    <h1>Bem-vindo à página Blog!</h1>
+
+    <!-- Seção de introdução com o texto desejado -->
+<div class="intro">    
+    <p>
+        <h4> </h4>
+    </p>
+        <p> 
+            Seja bem-vindo ao meu Portfólio! <br>
+            Fique à vontade! 
+        </p>
+    
+        </div>
+
+<div class="intro2">    
+        <p>
+            Com todo carinho, deixo aqui meu agradecimento <br> à dona Marcia  
+            e ao meu amor, meu apoio <br> diário,  
+            minha força nos estudos e na vida. <br> <strong> Obrigada por tudo, amo vocês. </strong>  
+            </p>
+                </div>
+
+<div class="gatos">    
+        <p>
+            Nos dias em que a rotina pesa, sempre encontro conforto nos olhares <br> silenciosos (ou nem tanto) 
+            da <strong>Jane</strong> e do <strong> Boris</strong>, meus filhihos felinos. <br> Por mais que nunca possam ler isso, devo a eles tantas <br> 
+            noites em que não estive sozinha. Seu carinho silencioso foi abrigo <br> nos dias mais longos.   
+            </p>
+                </div>
+    
+<div class="muies">    
+        <p>
+              
+            Mãe e vó: meus primeiros amores. <br>
+            Mulheres fortes que me ensinaram <br> 
+            a ser forte. 
+            Tudo o que tenho <br>
+            conquistado carrega um pedacinho <br>
+            
+            de vocês. Com todo o amor do mundo, <br> 
+            obrigada por tudo. Amo vocês.<br> 
+
+            </p>
+                </div>
+                
+        
+
+    <!--Classe com todo o conteúdo, conteúdo principal-->
+    <div class="main-container">
+        <!-- <nav> = conteúdos com links para redirecionamento (views configuradas no backend) <ul> para listas-->
+        <div class="top-section">
+            <nav>
+                <ul>
+                    <li><a href="{% url 'home' %}">HOME</a></li>
+                    <li><a href="{% url 'sobre' %}">PERFIL</a></li>
+                    <li><a href="{% url 'projetos' %}">PROJETOS</a></li>
+                    <li><a href="{% url 'blog' %}">BLOG</a></li>
+                    <li><a href="{% url 'conteudo' %}">ACERVO</a></li>
+                </ul>
+            </nav>
+            
+
+            <!-- Setorização das divs -->
+            <div class="content-section">
+            <div class="scaled-container">
+            <div class="complex-layout">
+            <div class="outline-box"></div>
+
+<!--Essas divs são todo o layout, um conjunto de todas as divs-->
+<div data-layer="Frame 1" 
+    style="width: 2740px; 
+    height: 2820px; 
+    position: relative
+    margin: 20px;
+    filter: drop-shadow(0 0 30px rgba(0, 0, 0, 2));
+">
+<div data-layer="HOME LAYOUT" 
+    style="width: 2740px; 
+    height: 2820px; 
+    left: 0px; 
+    top: 0px;       
+    position: absolute;
+">
+<div data-layer="LAYOUT HOME" 
+    style="width: 2740px; 
+    height: 2820px; 
+    left: 0px; 
+    top: 0px; 
+    position: absolute
+">
+                    
+                    <!--Começando a classificar as divs -->
+                    
+        </div>
+        <!--bola esticada comprida que fica no canto da sessão de boas-vindas -->
+        <div data-layer="Rectangle 66" 
+            style="width: 187px; 
+            height: 2770px; 
+            left: 29px; 
+            top: 216px; 
+            position: absolute; 
+            background: #2A0606; 
+            border-radius: 100px;
+            background-size: 3px 3px;
+            filter: drop-shadow(0 0 50px rgba(0, 0, 0, 2.8));
+            z-index: 99999;
+        ">
+        </div>
+        <!--bola esticada menorzinha -->
+        <div data-layer="Rectangle 82" 
+            style="width: 301px; 
+            height: 50px; 
+            left: 103px; 
+            top: 593px; 
+            position: absolute; 
+            transform: rotate(-90deg); 
+            transform-origin: top left; 
+            background: #F49C36; 
+            border-radius: 90px;
+            background-size: 3px 3px; 
+            filter: drop-shadow(0 0 50px rgba(0, 0, 0, 2.8));
+            opacity: 0.8;
+            z-index: 999999; 
+        ">
+        </div>
+            
+        
+        <!--Fundo geral para a sessão de boas-vindas -->
+        <div data-svg-wrapper 
+            data-layer="Rectangle 50" 
+            style="left: 128px; 
+            top: 266px; 
+            position: absolute;                                 
+            filter: drop-shadow(0 0 90px rgba(0, 0, 0, .8)); 
+            background-size: 3px 3px;  
+        ">
+    <svg width="1642" 
+            height="985" 
+            viewBox="0 0 1642 985" 
+            fill="none" 
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 87.254C0 39.0649 63.4965 0 141.823 0H1500.18C1578.5 0 1642 39.0649 1642 87.2539V897.746C1642 945.935 1578.5 985 1500.18 985H141.823C63.4965 985 0 945.935 0 897.746V87.254Z" fill="#F2D194"/>
+    </svg>
+    </div>
+
+<!--onde vão os links das redes--> 
+
+<!-- Logo do Linkedin -->
+<a href="https://www.linkedin.com/in/amanda-prado-7b714b2b4/" target="_blank">
+    <img data-layer="linkedin" 
+        style=" 
+        height: 400px; 
+        left: 300px; 
+        top: 890px;
+        position: absolute;
+        background-size: 3px 3px;
+        z-index: 99999999;
+    "
+        src="{% static 'images/linkedin.png' %}" />
+</a>
+
+<!-- Logo do Instagram -->
+<a href="https://www.instagram.com/amanprdo/" target="_blank">
+    <img data-layer="instagram" 
+        style=" 
+        height: 400px; 
+        left: 750px; 
+        top: 894px;
+        position: absolute;
+        background-size: 3px 3px;
+        z-index: 99999999;
+    "
+        src="{% static 'images/instagram.png' %}" />
+</a>
+
+<!-- Logo do GitHub -->
+<a href="https://github.com/amandwa" target="_blank">
+    <img data-layer="github" 
+        style=" 
+        height: 400px; 
+        left: 1250px; 
+        top: 894px;
+        position: absolute;
+        background-size: 3px 3px;
+        z-index: 99999999;
+    "
+        src="{% static 'images/github.png' %}" />
+</a>
+
+        <!-- Logo do início -->
+        <img data-layer="Designer__9_-removebg-preview 2" 
+            style="width: 1195px;
+            height: 797.50px; 
+            left: 1590px;
+            top: -110px;
+            position: absolute;
+            background-size: 3px 3px;
+            filter: drop-shadow(0 0 50px rgba(0, 0, 0, 2.8));
+        "
+            src="{% static 'images/logoofc.png' %}
+        " />
+                        
+
+                                
+<!--Seção lateral direita-->                              
+        <!--fundo de toda a seção com a dona marcia e antonio-->
+        <div data-layer="Rectangle 51" 
+            style="width: 913px; 
+            height: 1308px; 
+            left: 1728px; 
+            top: 602px; 
+            position: absolute; 
+            background: #2A0606; 
+            border-radius: 90px;                               
+        "
+        ></div>
+        <!--Palavra Portfólio-->
+        <div data-layer="PORTFÓLIO" 
+            style="width: 1217px; 
+            height: 125px; 
+            left: 1763px; 
+            top: 701px; 
+            position: absolute; 
+            text-align: justify; 
+            justify-content: flex-end; 
+            display: flex; 
+            flex-direction: column; 
+            color: #F2D194; 
+            font-size: 135px; 
+            font-family: Purple Purse; 
+            font-weight: 400; 
+            word-wrap: break-word; 
+            text-shadow: 0px 4px 4px rgba(65, 28, 20, 9.00);
+            filter: drop-shadow(0 0 50px rgba(0, 0, 0, 2.8));                               
+        "
+        >PORTFÓLIO</div>
+        <!--fundo, vai armazenar o rectangle 55, conexão com a div princial-->
+        <div data-layer="Rectangle 52" 
+        style="width: 1184px; 
+            height: 338px; 
+            left: 1559px; 
+            top: 826px; 
+            position: absolute; 
+            background: #F2D194; 
+            border-radius: 90px;
+            overflow: hidden;">  
+        </div>
+        
+        <!--proteção para o lado para ficar redondo o quadradão da marcia e do Tonho-->
+        <div data-layer="Rectangle 53" 
+            style="width: 1017px; 
+            height: 856px; 
+            left: 1624px; 
+            top: 1164px; 
+            position: absolute; 
+            background: #2A0606; 
+            border-radius: 110px;
+            filter: drop-shadow(0 0 90px rgba(0, 0, 0, 2.8));
+        "
+        ></div>
+
+        <!--Dona Marcia e Toin Toin -->  
+        <img data-layer="imagem_2025-04-03_153932871-removebg-preview 1" 
+            style="width: 600px; 
+            height: 820px; 
+            left:2043px; 
+            top: 1201px; 
+            position: absolute; 
+            border-bottom-right-radius: 90px;
+            filter: drop-shadow(0 0 90px rgba(0, 0, 0, 2.8));
+            z-index: 99999;" 
+            src="/static/images/toinmarcia.png
+        " 
+        />
+        <!-- fundo de gif marcia e tonho-->             
+        <div data-layer="Rectangle 56" 
+        style="width: 878px;        
+               height: 701px; cd
+               left: 0px;
+               right: 165px; 
+               top: 1251px; 
+               position: absolute; 
+               background-image: url('/static/images/fundoss.gif');
+               background-size: cover; 
+               background-repeat: no-repeat;
+               background-position: center;
+               border-top-left-radius: 90px; 
+               filter: blur(0px);
+               z-index: 9999;
+               border-bottom-right-radius: 90px;">
+        </div>
+
+
+<!--Parte de baixo -->
+
+        <!--Foto da mae-->
+        <img data-layer="eu 2" 
+            style="width: 500px; 
+            height: 790px; 
+            left: 1399px; 
+            top: 1964px; 
+            position: absolute;
+            z-index: 99999;"
+            src="/static/images/mamae.png"
+        />
+        <!--Foto da vovó-->
+        <img data-layer="eu 3" 
+            style="width: 500px; 
+            height: 800px; 
+            left: 1040px; 
+            top: 1954px; 
+            position: absolute;
+            z-index: 99998;" 
+            src="/static/images/vovo.png"
+        />
+        </svg>
+        </div> 
+        <!--Quadrado laranjado que fica atrás da Vo-->
+        <div data-layer="Rectangle 74" 
+            style="width: 611px; 
+            height: 765px; 
+            left: 734px; 
+            top: 1974px; 
+            position: absolute; 
+            background: #604A37; 
+            border-top-left-radius: 90px; 
+            border-bottom-left-radius: 90px;
+            filter: drop-shadow(0 0 90px rgba(0, 0, 0, 2.8));
+   "></div>
+
+        <!--Boris Pasternak Prado-->
+            <img data-layer="imagem_2025-04-03_155250526-removebg-preview 1" 
+            style="width: 500px; 
+            height: 440px; 
+            left: 30px; 
+            top: 2437px; 
+            position: absolute; 
+            border-bottom-right-radius: 90px; 
+            border-bottom-left-radius: 90px;
+            filter: drop-shadow(0 0 90px rgba(0, 0, 0, 2.8));
+            z-index: 99999999999;
+            " 
+            src="/static/images/borix.png" />
+        <!--Quadrado atrás do Boris -->
+        <div data-layer="Rectangle 78" 
+            style="width: 1527px;    
+            height: 388px; 
+            left: 31px; 
+            top: 2416px; 
+            position: absolute; background: #F49C36; border-radius: 90px"></div>
+
+            
+        <!--Jane Austen Prado -->
+            <img data-layer="imagem_2025-04-03_154324317-removebg-preview 1" 
+            style="width: 401px; 
+            height: 600px; 
+            left: 150px; 
+            top: 1820px; 
+            position: absolute;
+            z-index: 999999999;
+            filter: drop-shadow(0 0 90px rgba(0, 0, 0, 2.8));" 
+            src="/static/images/janes.png" />                
+        <!--Quadrado que vai atrás da Jane -->                        
+            <div data-layer="Rectangle 76" 
+            style="width: 527px; 
+            height: 388px; 
+            left: 72px; 
+            top: 1974px; 
+            position: absolute; 
+            background: #F49C36; 
+            z-index: 9999999; 
+            border-top-left-radius: 90px;
+            border-bottom-left-radius: 90px;
+
+            "></div>
+            
+       <!-- DIV/SVG que fica atrás de tudo em baixo,  -->
+        <!--Aqui, é onde "chamo" a div-->
+        <div data-svg-wrapper data-layer="Rectangle 59" 
+            style="left: 597px; 
+            top: 1331px; 
+            position: absolute;
+            filter: drop-shadow(0 0 90px rgba(0, 0, 0, 2));
+        ">
+        <!--aqui é onde "desenho" o SVG-->
+            <svg width="962" 
+            height="1489" 
+            viewBox="0 0 962 1489" 
+            fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 131.9C0 59.0535 37.2008 0 83.0902 0H878.91C924.799 0 962 59.0535 962 131.9V1357.1C962 1429.95 924.799 1489 878.91 1489H83.0902C37.2008 1489 0 1429.95 0 1357.1V131.9Z" fill="#F2D194"/>
+        </svg>
+        </div>
+        <!--Parte do lado esquerdo do fundo principal da parte de baixo -->
+        <div data-svg-wrapper data-layer="Rectangle 71" 
+            style="left: 168px; 
+            top: 1332px; 
+            position: absolute;
+">
+
+
+<!-- Lado direito da parte de baixo -->
+        <!-- Parte de trás do texto do lado direito -->
+        <div data-layer="Rectangle 62" 
+            style="width: 1600px; 
+            height: 519px; 
+            left: 830px; 
+            top: 900px; 
+            position: absolute; 
+            background: #2A0606; 
+            border-radius: 90px;
+            filter: drop-shadow(0 0 90px rgba(0, 0, 0, 2));
+            z-index: 1;
+
+            "></div>
+            <svg width="1323" 
+            height="608" 
+            viewBox="0 0 1323 608" 
+            fill="none" 
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 53.8583C0 24.1132 51.1607 0 114.271 0H1208.73C1271.84 0 1323 24.1132 1323 53.8583V554.142C1323 583.887 1271.84 608 1208.73 608H114.271C51.1607 608 0 583.887 0 554.142V53.8583Z" fill="#F2D194"/>
+
+
+</footer>                 
+
+
+                              </div>
+                            </div>
+                          </div>                        
+                          <div data-layer="Frame 1" style="width: 2740px; height: 2820px; position: relative">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
- 
- 
